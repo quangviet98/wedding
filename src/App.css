@@ -3,14 +3,14 @@
     font-family: Marcellus;
     font-style: normal;
     font-weight: 400;
-    src: url(/fonts/Marcellus-Regular.ttf) format("truetype");
+    src: url("fonts/Marcellus-Regular.ttf") format("truetype");
 }
 @font-face {
     font-display: swap;
     font-family: Simple-Serenity-Script;
     font-style: normal;
     font-weight: 400;
-    src: url(/fonts/Simple-Serenity-Script.ttf) format("truetype");
+    src: url("fonts/Simple-Serenity-Script.ttf") format("truetype");
 }
 section {
     display: block;
@@ -221,13 +221,13 @@ strong {
     font-size: 48px;
     color: var(--heading);
 }
-.master-hero{
+.master-hero {
     /* background-image: url('./assets/hero-img.png'); 
     background-size: cover; 
     background-position: center; */
     position: relative;
 }
-.master-hero-text{
+.master-hero-text {
     position: absolute;
     inset: 0;
     display: flex;
@@ -235,7 +235,7 @@ strong {
     justify-content: center;
     align-items: center;
 }
-.master-hero-name{
+.master-hero-name {
     font-size: 24px;
     font-weight: 500;
 }
@@ -490,13 +490,13 @@ strong {
 }
 
 .block-hero::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./assets/bgs2.webp'); /* Update with the correct path */
+    background-image: url("./assets/bgs2.webp"); /* Update with the correct path */
     background-size: cover;
     background-position: center;
     opacity: 0.3; /* Set the desired opacity */
