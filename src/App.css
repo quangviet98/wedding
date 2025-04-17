@@ -500,7 +500,7 @@ strong {
     background-image: url("./assets/bgs2.webp"); /* Update with the correct path */
     background-size: cover;
     background-position: center;
-    opacity: 0.3; /* Set the desired opacity */
+    opacity: 0.5; /* Set the desired opacity */
     z-index: 1; /* Ensure the pseudo-element is behind the content */
     transform: scale(1);
 }
