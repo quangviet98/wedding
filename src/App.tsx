@@ -1,20 +1,17 @@
-// App.jsx
-import CountdownTimer from "./components/CountdownTimer";
-import Gallery from "./components/Gallery";
-import HeroSection from "./components/HeroSection";
-import RSVPForm from "./components/RSVPForm";
-import Wishes from "./components/Wishes";
-import "./App.css";
+
+import './App.css';
+import Gallery from './components/Gallery';
+import HeroSection from './components/HeroSection';
+import Informations from './components/Informations';
+import Introduce from './components/Introduce';
 
 function App() {
-  console.log('%c [ App ]-10', 'font-size:13px; background:pink; color:#bf2c9f;', 'App')
   return (
     <div className="App">
       <HeroSection />
-      <CountdownTimer />
+      <Informations/>
+      <Introduce />
       <Gallery />
-      <RSVPForm />
-      <Wishes />
     </div>
   );
 }
