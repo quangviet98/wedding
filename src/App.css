@@ -12,6 +12,13 @@
     font-weight: 400;
     src: url("/fonts/Simple-Serenity-Script.ttf") format("truetype");
 }
+@font-face {
+    font-display: swap;
+    font-family: Le-Jour-Script;
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/Le-Jour-Script.otf") format("truetype");
+}
 section {
     display: block;
 }
@@ -112,7 +119,8 @@ button {
 :root {
     --background: #f6f4ec;
     --paragraphs: #6d705e;
-    --heading: #545748;
+    --subhead: #545748;
+    --heading: #a9aca1;
     --accent: #de967d;
     --subtitle: #a0a48e;
     --border: hsla(71, 11%, 60%, 0.5);
@@ -213,7 +221,7 @@ strong {
     line-height: 140%;
     text-transform: capitalize;
     font-size: 48px;
-    color: var(--heading);
+    color: var(--subhead);
 }
 .master-hero {
     /* background-image: url('./assets/hero-img.png'); 
@@ -248,6 +256,9 @@ strong {
 }
 .heading-hero {
     max-width: 890px;
+    font-family: Le-Jour-Script, Montserrat, sans-serif;
+    margin: 32px auto;
+    font-size: 46px;
 }
 .section {
     justify-content: center;
