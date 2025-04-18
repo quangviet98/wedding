@@ -227,23 +227,8 @@ strong {
     text-transform: capitalize;
     color: var(--subhead);
 }
-.master-hero {
-    /* background-image: url('./assets/hero-img.png'); 
-    background-size: cover; 
-    background-position: center; */
-    position: relative;
-}
-.master-hero-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.master-hero-name {
-    font-size: 24px;
-    font-weight: 500;
+.paragraph-invite {
+    margin-bottom: 24px;
 }
 .link {
     border-bottom: 1px solid var(--accent);
@@ -636,13 +621,13 @@ strong {
     .couple-name {
         font-size: 38px;
     }
-    .save-the-date{
+    .save-the-date {
         /* font-family: Montserrat, sans-serif; */
         font-size: 16px;
         font-weight: 400;
         color: var(--paragraphs);
     }
-    .paragraph-invite{
+    .paragraph-invite {
         display: none;
     }
     .block-hero {
@@ -868,4 +853,68 @@ button {
     cursor: pointer;
     font: inherit;
     padding: 0;
+}
+.date-display {
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--heading);
+}
+
+.date-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.date-column {
+    position: relative;
+}
+
+.date-column-center {
+    margin: 0 40px;
+}
+
+.date-day, .date-label, .date-month, .date-year {
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 6px;
+    font-size: 16px;
+}
+.date-label {
+    line-height: 20px;
+    padding: 20px 0;
+    border-top: 1px solid var(--accent);
+    border-bottom: 1px solid var(--accent);
+    width: 200px;
+}
+
+.date-day {
+    line-height: 1;
+    color: var(--accent);
+    margin: 30px 0;
+    font-size: 40px;
+}
+
+@media screen and (max-width: 767px) {
+    
+    .date-column-center {
+        margin: 0 20px;
+    }
+    .date-label {
+        width: 120px;
+        padding: 16px 0;
+    }
+ 
+    .date-day {
+        font-size: 50px;
+        margin: 20px 0;
+        letter-spacing: 4px;
+    }
+
+    .date-label,
+    .date-month,
+    .date-year {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
 }

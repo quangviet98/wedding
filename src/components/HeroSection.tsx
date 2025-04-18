@@ -60,6 +60,23 @@ const HeroText: React.FC = () => (
         {/* <p className="paragraph">We are invested in artful beauty, a strong logistical foundation with collaborative efforts constantly producing extraordinary events.</p> */}
         {/* <h1 className="heading-hero">Destination Wedding Planners &amp; Event Designers</h1> */}
         <p className="paragraph paragraph-invite">With full hearts, <br /> we joyfully invite you to celebrate our wedding</p>
+        <div>
+            <div className="date-display">
+                <div className="date-row">
+                    <div className="date-column">
+                        <div className="date-label">SATURDAY</div>
+                    </div>
+                    <div className="date-column date-column-center">
+                        <div className="date-month">JULY</div>
+                        <div className="date-day">10</div>
+                        <div className="date-year">2025</div>
+                    </div>
+                    <div className="date-column">
+                        <div className="date-label">8:30PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <a href="/contact" className="link">Book A Consult</a>
     </div>
 );
