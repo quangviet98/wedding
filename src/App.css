@@ -120,7 +120,8 @@ button {
     --background: #f6f4ec;
     --paragraphs: #6d705e;
     --subhead: #545748;
-    --heading: #a9aca1;
+    --heading: #83867a;
+    /* --heading: #a9aca1; */
     --accent: #de967d;
     --subtitle: #a0a48e;
     --border: hsla(71, 11%, 60%, 0.5);
@@ -614,7 +615,7 @@ strong {
     }
     .block-hero::before {
         transform: scale(1);
-        opacity: 0.5;
+        opacity: 0.3;
         animation: fadeInBackground 2s ease-out forwards;
     }
     @keyframes fadeInBackground {
@@ -623,7 +624,7 @@ strong {
             transform: scale(1.05);
         }
         100% {
-            opacity: 0.5;
+            opacity: 0.3;
             transform: scale(1);
         }
     }
