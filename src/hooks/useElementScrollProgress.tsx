@@ -16,12 +16,10 @@ const useElementScrollProgress = (ref: React.RefObject<HTMLElement | null>) => {
 
             // Khoảng cách đã scroll (tính từ lúc top chạm vào đáy viewport đến khi bottom chạm vào top viewport)
             const distanceScrolled = viewportHeight - rect.top;
-            console.log('%c [ distanceScrolled ]-19', 'font-size:13px; background:pink; color:#bf2c9f;', distanceScrolled)
 
             const rawProgress = distanceScrolled / totalTravel;
 
             const clamped = Math.max(0, Math.min(1, rawProgress));
-            console.log('%c [ clamped ]-23', 'font-size:13px; background:pink; color:#bf2c9f;', clamped)
             setProgress(clamped);
         };
 
