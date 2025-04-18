@@ -80,7 +80,6 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ visible }) => {
                     transformStyle: "preserve-3d",
                     transition: "opacity 0.3s ease-in-out"
                   }}
-                  sizes="(max-width: 479px) 96vw, (max-width: 767px) 95vw, 96vw"
                   loading="lazy"
                 />
               </a>
@@ -96,7 +95,6 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ visible }) => {
                       transformStyle: "preserve-3d",
                       transition: "opacity 0.3s ease-in-out"
                     }}
-                    sizes="(max-width: 479px) 96vw, (max-width: 767px) 95vw, 96vw"
                     loading="lazy"
                   />
                 </a>

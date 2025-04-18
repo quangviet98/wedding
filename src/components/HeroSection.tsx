@@ -9,33 +9,26 @@ import LeafRight from '../assets/leaf_right_fully_transparent.png'
 
 interface HeroImage {
     src: string;
-    srcSet?: string;
 }
 
 const heroImages: HeroImage[] = [
     {
         src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg",
-        srcSet: "https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12-p-500.jpeg 500w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12-p-800.jpeg 800w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg 805w"
     },
     {
         src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg",
-        srcSet: "https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11-p-800.jpeg 800w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg 1000w"
     },
     {
         src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg",
-        srcSet: "https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12-p-500.jpeg 500w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12-p-800.jpeg 800w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg 805w"
     },
     {
         src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg",
-        srcSet: "https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11-p-800.jpeg 800w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg 1000w"
     },
     {
         src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg",
-        srcSet: "https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12-p-500.jpeg 500w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12-p-800.jpeg 800w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg 805w"
     },
     {
         src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg",
-        srcSet: "https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11-p-800.jpeg 800w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg 1000w"
     },
 ];
 
@@ -135,9 +128,7 @@ const ImageGallery: React.FC = () => {
                         className={`image-lightbox ${loadedImages[index] ? 'fade-in' : ''}`}
                         src={image.src}
                         alt=""
-                        sizes="(max-width: 479px) 90vw, (max-width: 767px) 89vw, 90vw"
                         loading="lazy"
-                        srcSet={image.srcSet}
                     />
                 </a>
             ))}
