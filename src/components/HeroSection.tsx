@@ -45,10 +45,21 @@ const HeroText: React.FC = () => (
             </div>
 
         </div> */}
-        <h1 className="heading-hero">Quang Viet &amp; Ha Tuyen</h1>
+        <div className='couple-name-wrapper'>
+            <span className='couple-name'>
+                Quang Viet
+            </span>
+            <span>
+                &amp;
+            </span>
+            <span className='couple-name'>
+                Ha Tuyen
+            </span>
+        </div>
+        {/* <h1 className="heading-hero">Quang Viet &amp; Ha Tuyen</h1> */}
         {/* <p className="paragraph">We are invested in artful beauty, a strong logistical foundation with collaborative efforts constantly producing extraordinary events.</p> */}
         {/* <h1 className="heading-hero">Destination Wedding Planners &amp; Event Designers</h1> */}
-        <p className="paragraph">With full hearts, <br/> we joyfully invite you to celebrate our wedding</p>
+        <p className="paragraph paragraph-invite">With full hearts, <br /> we joyfully invite you to celebrate our wedding</p>
         <a href="/contact" className="link">Book A Consult</a>
     </div>
 );
