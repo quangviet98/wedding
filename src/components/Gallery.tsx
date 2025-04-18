@@ -76,7 +76,6 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ visible }) => {
                   className={`image-lightbox ${loadedImages[index] ? 'fade-in' : ''}`}
                   src={item.src}
                   style={{
-                    opacity: loadedImages[index] ? 1 : 0,
                     transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
                     transformStyle: "preserve-3d",
                     transition: "opacity 0.3s ease-in-out"
