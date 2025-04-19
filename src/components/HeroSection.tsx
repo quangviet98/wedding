@@ -49,8 +49,8 @@ const HeroText: React.FC = () => (
             <span className='couple-name'>
                 Quang Viet
             </span>
-            <span>
-                &amp;
+            <span className='couple-connect'>
+                and
             </span>
             <span className='couple-name'>
                 Ha Tuyen
