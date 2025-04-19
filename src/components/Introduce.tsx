@@ -17,12 +17,18 @@ const images = [
   {
     src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c869f09424720d94e3a6f_img_4.jpg",
     srcSet: "https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c869f09424720d94e3a6f_img_4-p-500.jpeg 500w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c869f09424720d94e3a6f_img_4-p-800.jpeg 800w, https://assets-global.website-files.com/6109925e44b6ab8a7601f26a/610c869f09424720d94e3a6f_img_4.jpg 805w"
+  },
+  {
+    src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b43d6b6c024c89d1812f4_flower_1.png"
+  },
+  {
+    src: "https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c8b93895b7accc322bb80_flower_3.png"
   }
 ];
 function Introduce() {
   const { isVisible, sectionRef } = useSectionVisibility({ threshold: 0.1 });
   const progress = useElementScrollProgress(sectionRef);
-  const { loadedImages } = useImageLoader(images, isVisible);
+  const { loadedImages } = useImageLoader(images, isVisible, 0);
 
   // Main image animations
   const scaleClamped = getClampedAnimationValue(
@@ -89,43 +95,41 @@ function Introduce() {
                 src={images[0].src}
                 alt=""
                 style={{
-                  opacity: loadedImages[0] ? 1 : 0,
                   willChange: "transform",
                   transform: `translate3d(0px, 0px, 0px) scale3d(${scaleClamped}, ${scaleClamped}, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
                   transformStyle: "preserve-3d",
-                  transition: "opacity 0.5s ease-in-out"
+                  opacity: 0
                 }}
                 sizes="(max-width: 479px) 96vw, (max-width: 767px) 95vw, 96vw"
                 data-w-id="0bbd957c-f07a-58b9-64b3-eb07d2161431"
                 loading="lazy"
-                srcSet={images[0].srcSet}
               />
             </div>
             <img
-              src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610b43d6b6c024c89d1812f4_flower_1.png"
+              src={images[1].src}
               loading="eager"
               style={{
-                opacity: 1,
                 willChange: "transform",
                 transform: `translate3d(${translateXValue}%, ${translateYValue}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateFlowerValue}deg) skew(0deg, 0deg)`,
-                transformStyle: "preserve-3d"
+                transformStyle: "preserve-3d",
+                opacity: 0
               }}
               data-w-id="e07efab1-2405-6403-610c-990a8c6de499"
               alt=""
-              className="flower-postcard---a"
+              className={`flower-postcard---a ${loadedImages[1] ? 'fade-in' : ''}`}
             />
             <img
-              src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c8b93895b7accc322bb80_flower_3.png"
+              src={images[2].src}
               loading="eager"
               style={{
-                opacity: 1,
                 willChange: "transform",
                 transform: `translate3d(0px, ${translateYFlower2}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateClamped}deg) skew(0deg, 0deg)`,
-                transformStyle: "preserve-3d"
+                transformStyle: "preserve-3d",
+                opacity: 0
               }}
               data-w-id="64c4007d-6a6a-9e00-031a-245d11e1a5c8"
               alt=""
-              className="flower-postcard---b"
+              className={`flower-postcard---b ${loadedImages[2] ? 'fade-in' : ''}`}
             />
           </div>
         </div>

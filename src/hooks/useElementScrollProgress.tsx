@@ -25,8 +25,8 @@ const useElementScrollProgress = (ref: React.RefObject<HTMLElement | null>) => {
 
         handleScroll(); // chạy 1 lần đầu
 
-        document.body.addEventListener("scroll", handleScroll);
-        return () => document.body.removeEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, [ref]);
 
     return progress; // từ 0 -> 1
