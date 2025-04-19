@@ -631,12 +631,13 @@ strong {
         display: none;
     }
     .block-hero {
-        min-height: 60vh;
+        min-height: 100vh;
     }
     .block-hero::before {
         transform: scale(1);
         opacity: 0.3;
         animation: fadeInBackground 2s ease-out forwards;
+        background-position: 20%;
     }
     @keyframes fadeInBackground {
         0% {
@@ -703,7 +704,7 @@ strong {
         grid-row-gap: 10px;
     }
     .block-hero {
-        min-height: 50vh;
+        min-height: 100vh;
     }
     .grid-hero {
         align-items: stretch;
@@ -833,7 +834,6 @@ strong {
     padding: 0;
 }
 body {
-    height: 100%;
     margin: 0;
     overflow-x: hidden;
     padding: 0;
