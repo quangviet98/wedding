@@ -40,6 +40,10 @@
 .char-animate {
   display: inline-block;
   opacity: 0;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  filter: blur(0.002px); // trick chống mất nét
+
   animation:
     fadeInOpacity 1s ease forwards,
     fadeInChar 0.5s ease forwards;
