@@ -9,7 +9,7 @@ interface FadeInTextProps {
 
 const FadeInText: React.FC<FadeInTextProps> = ({ text, className, delayOffset = 0 }) => {
     return (
-        <span className={`fadein-text fadein-text-${text.length} ${className || ''}`} style={{ '--delay-offset': `${delayOffset}s` } as React.CSSProperties}>
+        <p className={`fadein-text fadein-text-${text.length} ${className || ''}`} style={{ '--delay-offset': `${delayOffset}s` } as React.CSSProperties}>
             {text.split('').map((char, idx) => (
                 <span key={idx}>{char === ' ' ? '\u00A0' : char}</span>
             ))}
