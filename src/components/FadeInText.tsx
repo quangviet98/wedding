@@ -13,7 +13,7 @@ const FadeInText: React.FC<FadeInTextProps> = ({ text, className, delayOffset = 
             {text.split('').map((char, idx) => (
                 <span key={idx}>{char === ' ' ? '\u00A0' : char}</span>
             ))}
-        </span>
+        </p>
     );
 };
 
