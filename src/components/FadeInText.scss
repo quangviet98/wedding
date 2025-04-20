@@ -12,20 +12,29 @@ transform: scale(1);
 }
 
 .fadein-text span {
+ clip-path: inset(100% 0 0 0);
     opacity: 0;
     //display: inline;
-    animation: fadeInChar 0.5s ease forwards;
-}
-.char-space {
-  display: inline;
+    //animation: fadeInChar 0.5s ease forwards;
+animation: clipReveal 0.6s ease-out forwards;
 }
 
-.char-animate {
-  display: inline-block;
+
+
+.fadein-text span {
   opacity: 0;
-  animation: fadeChar 0.5s ease forwards;
+  animation: clipReveal 0.6s ease-out forwards;
 }
-
+@keyframes clipReveal {
+  0% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
 
 $max: 50;
 $delay-step: 0.1s;
