@@ -15,7 +15,7 @@
     animation: fadeInChar 0.5s ease forwards;
 }
 
-$max: 100;
+$max: 50;
 $delay-step: 0.1s;
 
 @for $len from 1 through $max {
