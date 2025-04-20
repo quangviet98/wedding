@@ -11,7 +11,7 @@ const FadeInText: React.FC<FadeInTextProps> = ({ text, className, delayOffset = 
     return (
         <p className={`fadein-text fadein-text-${text.length} ${className || ''}`} style={{ '--delay-offset': `${delayOffset}s` } as React.CSSProperties}>
             {text.split('').map((char, idx) => (
-                <span key={idx}>{char === ' ' ? '\u00A0' : char}</span>
+                <span className={char === ' ' ? 'char-space' : 'char-animate'} key={idx}>{char === ' ' ? '\u00A0' : char}</span>
             ))}
         </p>
     );
