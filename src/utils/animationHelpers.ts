@@ -6,7 +6,7 @@
  * @returns Interpolated value
  */
 export const getAnimationValue = (start: number, end: number, progress: number): number => {
-  return start + (progress * (end - start));
+  return start + progress * (end - start);
 };
 
 /**

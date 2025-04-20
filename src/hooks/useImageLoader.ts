@@ -13,7 +13,7 @@ interface ImageSource {
  * @returns Object containing loaded state and array of loaded status for each image
  */
 const useImageLoader = (
-  images: ImageSource[], 
+  images: ImageSource[],
   allowSetLoaded: boolean = true,
   revealDelay: number = 150,
 ) => {
@@ -46,7 +46,7 @@ const useImageLoader = (
     if (allLoaded && allowSetLoaded) {
       images.forEach((_, index) => {
         setTimeout(() => {
-          setLoadedImages(prev => {
+          setLoadedImages((prev) => {
             const updated = [...prev];
             updated[index] = true;
             return updated;

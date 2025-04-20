@@ -1,37 +1,37 @@
 name: Deploy to GitHub Pages
 
 on:
-    push:
-        branches:
-            - master # Thay bằng branch code chính nếu khác
+  push:
+    branches:
+      - master # Thay bằng branch code chính nếu khác
 
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: 📥 Checkout source
-              uses: actions/checkout@v3
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout source
+        uses: actions/checkout@v3
 
-            - name: 🧰 Setup Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 18
+      - name: 🧰 Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-            - name: 📦 Install dependencies
-              run: npm ci
+      - name: 📦 Install dependencies
+        run: npm ci
 
-            - name: 🛠 Build project
-              run: npm run build
+      - name: 🛠 Build project
+        run: npm run build
 
-            - name: 📂 Show dist content (debug)
-              run: |
-                  echo "👉 dist content:"
-                  ls -la dist
-                  echo "👉 index.html preview:"
-                  cat dist/index.html
+      - name: 📂 Show dist content (debug)
+        run: |
+          echo "👉 dist content:"
+          ls -la dist
+          echo "👉 index.html preview:"
+          cat dist/index.html
 
-            - name: 🚀 Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v4
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./dist
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
