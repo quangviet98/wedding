@@ -38,13 +38,18 @@
 }
 
 .char-animate {
-  //display: inline-block;
+  display: inline-block;
   opacity: 0;
 
 
   animation:
     fadeInOpacity 1s ease forwards,
     fadeInChar 0.5s ease forwards;
+backface-visibility: hidden;
+  transform: translateZ(0);
+  filter: blur(0.001px);
+  will-change: opacity;
+  -webkit-font-smoothing: antialiased;
 }
 @keyframes clipReveal {
   0% {
