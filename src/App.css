@@ -108,14 +108,7 @@ button {
     -webkit-appearance: button;
     border: 0;
 }
-@keyframes spin {
-    0% {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(1turn);
-    }
-}
+
 :root {
     --background: #f6f4ec;
     --paragraphs: #6d705e;
@@ -226,6 +219,7 @@ strong {
 }
 .paragraph-invite {
     margin-bottom: 24px;
+    line-height: 20px;
 }
 .link {
     border-bottom: 1px solid var(--accent);
@@ -255,7 +249,7 @@ strong {
     /* margin: 32px auto; */
     font-size: 46px;
 }
-.couple-connect{
+.couple-connect {
     color: var(--subtitle);
     font-family: Le-Jour-Script, Montserrat, sans-serif;
 }
@@ -795,36 +789,6 @@ strong {
 .image-lightbox:hover {
     transform: scale3d(1.15, 1.15, 1);
 }
-.fade-in {
-    animation: fadeIn 1s ease-in-out forwards;
-    opacity: 0;
-}
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-.leaf {
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-name: drift;
-    animation-timing-function: cubic-bezier(0.4, 0.3, 0.8);
-    transform: translate3d(-40px, -40px, 0) rotate(25deg);
-}
-@keyframes drift {
-    0% {
-        transform: translate3d(-40px, -40px, 0) rotate(25deg);
-    }
-    80% {
-        transform: translate3d(10px, -6px, 0) rotate(-10deg);
-    }
-    to {
-        transform: translateZ(0) rotate(0);
-    }
-}
 *,
 :after,
 :before {
@@ -874,7 +838,10 @@ button {
     margin: 0 40px;
 }
 
-.date-day, .date-label, .date-month, .date-year {
+.date-day,
+.date-label,
+.date-month,
+.date-year {
     font-family: Montserrat, sans-serif;
     letter-spacing: 6px;
     font-size: 16px;
@@ -895,7 +862,6 @@ button {
 }
 
 @media screen and (max-width: 767px) {
-    
     .date-column-center {
         margin: 0 20px;
     }
@@ -903,7 +869,7 @@ button {
         width: 120px;
         padding: 16px 0;
     }
- 
+
     .date-day {
         font-size: 50px;
         margin: 20px 0;
@@ -917,3 +883,4 @@ button {
         letter-spacing: 4px;
     }
 }
+

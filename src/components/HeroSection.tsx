@@ -5,6 +5,8 @@ import useImageLoader from '../hooks/useImageLoader';
 import Leaf from './Leaf';
 import LeafLeft from '../assets/topleft.svg'
 import LeafRight from '../assets/leaf_right_fully_transparent.png'
+import FadeInText from './FadeInText';
+import TypingText from './TypingText';
 // import HeroImg from '../assets/hero-img.png'
 
 interface HeroImage {
@@ -32,34 +34,81 @@ const heroImages: HeroImage[] = [
     },
 ];
 
+const delayStep = 0.1;
+const baseDelay = 1.5;
+
+const textBlocks = ["Quang Viet", "and", "Ha Tuyen", "With full hearts,", "we joyfully invite you to celebrate our wedding"];
+
+let offset = baseDelay;
+const delays = textBlocks.map((text) => {
+    const current = offset;
+    offset += text.length * delayStep;
+    return current;
+});
+console.log('%c [ delays[4] ]-48', 'font-size:13px; background:pink; color:#bf2c9f;', delays[4])
 const HeroText: React.FC = () => (
     <div className="text-hero">
         <Leaf visible={true} />
-        <div className="save-the-date">Save The Date<br /></div>
-        {/* <div className='master-hero'>
-            <img src={HeroImg} width={120} />
-            <div className='master-hero-text'>
-                <div className='master-hero-name'>C</div>
-                <div className='master-hero-concat'>+</div>
-                <div className='master-hero-name'>T</div>
-            </div>
-
-        </div> */}
+        <TypingText
+            text="Save The Date"
+            typingWidth="162px"
+            // animationDelay={`${delays[3]}s`}
+            // style={{ marginBottom: "8px" }}
+            className='save-the-date'
+        />
+        {/* <div className="save-the-date typing" style={{ "--step": 13, "--typing-width": '162px' } as React.CSSProperties}></div> */}
         <div className='couple-name-wrapper'>
-            <span className='couple-name'>
-                Quang Viet
-            </span>
-            <span className='couple-connect'>
-                and
-            </span>
-            <span className='couple-name'>
-                Ha Tuyen
-            </span>
+            <FadeInText text={textBlocks[0]} className='couple-name' delayOffset={delays[0]} />
+            <FadeInText text={textBlocks[1]} className='couple-connect' delayOffset={delays[1]} />
+            <FadeInText text={textBlocks[2]} className='couple-name' delayOffset={delays[2]} />
         </div>
-        {/* <h1 className="heading-hero">Quang Viet &amp; Ha Tuyen</h1> */}
-        {/* <p className="paragraph">We are invested in artful beauty, a strong logistical foundation with collaborative efforts constantly producing extraordinary events.</p> */}
-        {/* <h1 className="heading-hero">Destination Wedding Planners &amp; Event Designers</h1> */}
-        <p className="paragraph paragraph-invite">With full hearts, <br /> we joyfully invite you to celebrate our wedding</p>
+
+        <p className="paragraph paragraph-invite">
+            {/* <FadeInText text={textBlocks[3]} delayOffset={delays[3]} />
+            <br />
+            <FadeInText text={textBlocks[4]} delayOffset={delays[4]} /> */}
+            {/* <span className="typing" style={{
+                "--step": 17,
+                "--typing-width": '130px',
+                animationDelay: `${delays[3]}s`,
+                display: "inline-block",
+                marginBottom: '8px'
+
+            } as React.CSSProperties} >With full hearts,</span>
+            <br />
+            <span className="typing" style={{
+                "--step": 47,
+                "--typing-width": '385px',
+                animationDelay: `${delays[3] + 1.5}s`,
+                display: "inline-block",
+                animationDuration: '3s'
+
+            } as React.CSSProperties}
+                onAnimationStart={() => {
+                    console.log('%c [ onAnimationStart ]-80', 'font-size:13px; background:pink; color:#bf2c9f;', 'onAnimationStart')
+
+                }}
+                onAnimationEnd={() => {
+                    console.log('%c [ onAnimationEnd ]-80', 'font-size:13px; background:pink; color:#bf2c9f;', 'onAnimationEnd')
+
+                }}
+            >we joyfully invite you to celebrate our wedding</span> */}
+
+            <TypingText
+                text="With full hearts,"
+                typingWidth="130px"
+                animationDelay={`${delays[3]}s`}
+                style={{ marginBottom: "8px" }}
+            />
+            <br />
+            <TypingText
+                text="we joyfully invite you to celebrate our wedding"
+                typingWidth="385px"
+                animationDelay={`${delays[3] + 1.5}s`}
+                animationDuration="3s"
+            />
+        </p>
+
         <div>
             <div className="date-display">
                 <div className="date-row">

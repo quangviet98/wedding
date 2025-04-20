@@ -1,0 +1,29 @@
+@keyframes fadeInChar {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadein-text span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeInChar 0.5s ease forwards;
+}
+
+$max: 100;
+$delay-step: 0.1s;
+
+@for $len from 1 through $max {
+    .fadein-text-#{$len} {
+        @for $i from 1 through $len {
+            span:nth-child(#{$i}) {
+                animation-delay: calc(var(--delay-offset, 0s) + #{$i * $delay-step});
+            }
+        }
+    }
+}
