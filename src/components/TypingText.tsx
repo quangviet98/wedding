@@ -25,7 +25,7 @@ const TypingText: React.FC<TypingTextProps> = ({
   const width = typingWidth ?? `${text.length}ch`;
 
   return (
-    <span
+      <span
       className={`typing${active ? " active" : ""}${done ? " done" : ""} ${className}`}
       style={{
         "--step": stepCount,
