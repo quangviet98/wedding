@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "../animation.scss";
+import React, { useState } from 'react';
+import '../animation.scss';
 
 interface TypingTextProps {
   text: string;
@@ -12,7 +12,7 @@ interface TypingTextProps {
 
 const TypingText: React.FC<TypingTextProps> = ({
   text,
-  className = "",
+  className = '',
   style = {},
   typingWidth,
   animationDelay,
@@ -25,16 +25,18 @@ const TypingText: React.FC<TypingTextProps> = ({
   const width = typingWidth ?? `${text.length}ch`;
 
   return (
-       <span
-      className={`typing${active ? " active" : ""}${done ? " done" : ""} ${className}`}
-      style={{
-        "--step": stepCount,
-        "--typing-width": width,
-        animationDelay,
-        animationDuration,
-        display: "inline-block",
-        ...style,
-      } as React.CSSProperties}
+    <span
+      className={`typing${active ? ' active' : ''}${done ? ' done' : ''} ${className}`}
+      style={
+        {
+          '--step': stepCount,
+          '--typing-width': width,
+          animationDelay,
+          animationDuration,
+          display: 'inline-block',
+          ...style,
+        } as React.CSSProperties
+      }
       onAnimationStart={() => {
         setActive(true);
         setDone(false);
