@@ -2,12 +2,12 @@
   from {
     // opacity: 0;
     // transform: scale(0.8);
-    //transform: translateY(20px);
+    transform: translateY(20px);
   }
   to {
     // opacity: 1;
     // transform: scale(1);
-    //transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -41,15 +41,9 @@
   display: inline-block;
   opacity: 0;
 
-
   animation:
     fadeInOpacity 1s ease forwards,
     fadeInChar 0.5s ease forwards;
-backface-visibility: hidden;
-  transform: translateZ(0);
-  filter: blur(0.001px);
-  will-change: opacity;
-  -webkit-font-smoothing: antialiased;
 }
 @keyframes clipReveal {
   0% {
