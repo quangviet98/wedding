@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import useImageLoader from '../hooks/useImageLoader';
 // import useElementScrollProgress from '../hooks/useElementScrollProgress';
 // import { getAnimationValue } from '../utils/animationHelpers';
-import Leaf from './Leaf';
+// import Leaf from './Leaf';
 import Img1 from '../assets/image-1.png';
 import Img2 from '../assets/image-2.png';
 import Img3 from '../assets/image-3.png';
@@ -14,8 +14,8 @@ import Img8 from '../assets/image-8.png';
 import Img9 from '../assets/image-9.png';
 import Img10 from '../assets/image-10.png';
 import Img11 from '../assets/image-11.png';
-import FadeInText from './FadeInText';
-import TypingText from './TypingText';
+// import FadeInText from './FadeInText';
+// import TypingText from './TypingText';
 import './HeroSection.scss';
 // import HeroImg from '../assets/hero-img.png'
 
@@ -255,7 +255,7 @@ export const FlowerDecoration: React.FC = () => {
   );
 };
 
-const ImageGallery: React.FC = () => {
+export const ImageGallery: React.FC = () => {
   const { loadedImages } = useImageLoader(heroImages);
 
   return (
