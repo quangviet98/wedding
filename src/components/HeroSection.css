@@ -1,0 +1,52 @@
+.section-hero .block-hero {
+  position: relative;
+  z-index: -1;
+}
+.section-hero .bg-img {
+  position: absolute;
+  opacity: 0;
+}
+.section-hero .bg-0 {
+  bottom: 0px;
+  right: -18px;
+  width: 200px;
+  z-index: 1;
+}
+.section-hero .bg-1 {
+  bottom: -10px;
+  right: -18px;
+  width: 250px;
+  z-index: 1;
+}
+.section-hero .bg-2 {
+  bottom: -10px;
+  right: -18px;
+  width: 250px;
+  z-index: 1;
+}
+.section-hero .bg-3 {
+  bottom: -10px;
+  right: -18px;
+  width: 250px;
+  z-index: 1;
+}
+.section-hero .bg-4 {
+  bottom: -10px;
+  right: -18px;
+  width: 250px;
+  z-index: 1;
+}
+.section-hero .bg-5 {
+  bottom: -10px;
+  right: -18px;
+  width: 250px;
+  z-index: 1;
+}
+.section-hero .bg-6 {
+  bottom: -10px;
+  right: -18px;
+  width: 250px;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=HeroSection.css.map */

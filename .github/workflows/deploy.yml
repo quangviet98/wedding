@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master # Thay bằng branch code chính nếu khác
+      - temp-1 # Thay bằng branch code chính nếu khác
 
 jobs:
   build-and-deploy:

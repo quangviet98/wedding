@@ -3,10 +3,20 @@ import useImageLoader from '../hooks/useImageLoader';
 // import useElementScrollProgress from '../hooks/useElementScrollProgress';
 // import { getAnimationValue } from '../utils/animationHelpers';
 import Leaf from './Leaf';
-import LeafLeft from '../assets/topleft.svg';
-import LeafRight from '../assets/leaf_right_fully_transparent.png';
+import Img1 from '../assets/image-1.png';
+import Img2 from '../assets/image-2.png';
+import Img3 from '../assets/image-3.png';
+import Img4 from '../assets/image-4.png';
+import Img5 from '../assets/image-5.webp';
+import Img6 from '../assets/image-6.png';
+import Img7 from '../assets/image-7.png';
+import Img8 from '../assets/image-8.png';
+import Img9 from '../assets/image-9.png';
+import Img10 from '../assets/image-10.png';
+import Img11 from '../assets/image-11.png';
 import FadeInText from './FadeInText';
 import TypingText from './TypingText';
+import './HeroSection.scss';
 // import HeroImg from '../assets/hero-img.png'
 
 interface HeroImage {
@@ -54,15 +64,51 @@ const delays = textBlocks.map((text) => {
 console.log('%c [ delays[4] ]-48', 'font-size:13px; background:pink; color:#bf2c9f;', delays[4]);
 const HeroText: React.FC = () => (
   <div className="text-hero">
-    <Leaf visible={true} />
+    <div className="save-the-date">
+      <p>SAVE THE DATE</p>
+      <img src={Img7} />
+      {/* <TypingText
+      text="SAVE THE DATE"
+      typingWidth="182px"
+      // className="save-the-date"
+    /> */}
+    </div>
+    <div className="couple-name-wrapper">
+      <div className="couple-name">DANIEL</div>
+
+      <div className="couple-connect">And</div>
+
+      <div className="couple-name" style={{ paddingLeft: '50px' }}>
+        OLIVIA
+      </div>
+    </div>
+    <div className="invite-wrapper">
+      <div className="invite-text">
+        we invite you to join <br /> our wedding
+      </div>
+
+      <div className="wedding-date">
+        <div className="date-month">JULY</div>
+        <div className="date-day">04</div>
+        <div className="date-year">2025</div>
+      </div>
+
+      <div className="invite-address">
+        123 Anywhere St., Any City, <br />
+        St 12345
+      </div>
+      <img src={Img9} width={120} />
+      {/* <p className='reception'>Reception to follow</p> */}
+    </div>
+
+    {/* <Leaf visible={true} />
     <TypingText
-      text="Save The Date"
-      typingWidth="162px"
+      text="SAVE THE DATE"
+      typingWidth="182px"
       // animationDelay={`${delays[3]}s`}
       // style={{ marginBottom: "8px" }}
       className="save-the-date"
     />
-    {/* <div className="save-the-date typing" style={{ "--step": 13, "--typing-width": '162px' } as React.CSSProperties}></div> */}
     <div className="couple-name-wrapper">
       <FadeInText text={textBlocks[0]} className="couple-name" delayOffset={delays[0]} />
       <FadeInText text={textBlocks[1]} className="couple-connect" delayOffset={delays[1]} />
@@ -70,36 +116,7 @@ const HeroText: React.FC = () => (
     </div>
 
     <p className="paragraph paragraph-invite">
-      {/* <FadeInText text={textBlocks[3]} delayOffset={delays[3]} />
-            <br />
-            <FadeInText text={textBlocks[4]} delayOffset={delays[4]} /> */}
-      {/* <span className="typing" style={{
-                "--step": 17,
-                "--typing-width": '130px',
-                animationDelay: `${delays[3]}s`,
-                display: "inline-block",
-                marginBottom: '8px'
-
-            } as React.CSSProperties} >With full hearts,</span>
-            <br />
-            <span className="typing" style={{
-                "--step": 47,
-                "--typing-width": '385px',
-                animationDelay: `${delays[3] + 1.5}s`,
-                display: "inline-block",
-                animationDuration: '3s'
-
-            } as React.CSSProperties}
-                onAnimationStart={() => {
-                    console.log('%c [ onAnimationStart ]-80', 'font-size:13px; background:pink; color:#bf2c9f;', 'onAnimationStart')
-
-                }}
-                onAnimationEnd={() => {
-                    console.log('%c [ onAnimationEnd ]-80', 'font-size:13px; background:pink; color:#bf2c9f;', 'onAnimationEnd')
-
-                }}
-            >we joyfully invite you to celebrate our wedding</span> */}
-
+      
       <TypingText
         text="With full hearts,"
         typingWidth="130px"
@@ -134,17 +151,44 @@ const HeroText: React.FC = () => (
     </div>
     <a href="/contact" className="link">
       Book A Consult
-    </a>
+    </a> */}
   </div>
 );
 
 // Define flower images for the loader
 const flowerImages = [
   {
-    src: LeafLeft,
+    src: Img1,
   },
   {
-    src: LeafRight,
+    src: Img2,
+  },
+  {
+    src: Img3,
+  },
+  {
+    src: Img4,
+  },
+  {
+    src: Img5,
+  },
+  {
+    src: Img6,
+  },
+  {
+    src: Img7,
+  },
+  {
+    src: Img8,
+  },
+  {
+    src: Img9,
+  },
+  {
+    src: Img10,
+  },
+  {
+    src: Img11,
   },
 ];
 
@@ -167,28 +211,45 @@ export const FlowerDecoration: React.FC = () => {
       <img
         src={flowerImages[0].src}
         loading="eager"
-        style={{
-          willChange: 'transform',
-          // transform: `translate3d(0px, ${translateYFlower1}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
-          transformStyle: 'preserve-3d',
-          opacity: loadedImages[0] ? 1 : 0,
-          transition: 'opacity 0.5s ease-in-out',
-        }}
         alt=""
-        className={`flower-hero1 ${loadedImages[0] ? 'fade-in' : ''}`}
+        className={`bg-img bg-0 ${loadedImages[0] ? 'fade-in' : ''}`}
       />
       <img
         src={flowerImages[1].src}
         loading="eager"
-        style={{
-          willChange: 'transform',
-          // transform: `translate3d(0px, ${translateYFlower2}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
-          transformStyle: 'preserve-3d',
-          opacity: loadedImages[1] ? 1 : 0,
-          transition: 'opacity 0.5s ease-in-out',
-        }}
         alt=""
-        className={`flower-hero2 ${loadedImages[1] ? 'fade-in' : ''}`}
+        className={`bg-img bg-1 ${loadedImages[1] ? 'fade-in' : ''}`}
+      />
+      <img
+        src={flowerImages[2].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-2 ${loadedImages[2] ? 'fade-in' : ''}`}
+      />
+      <img
+        src={flowerImages[3].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-3 ${loadedImages[3] ? 'fade-in' : ''}`}
+      />
+      <img
+        src={flowerImages[4].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-4 ${loadedImages[4] ? 'fade-in' : ''}`}
+      />
+
+      <img
+        src={flowerImages[5].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-5 ${loadedImages[5] ? 'fade-in' : ''}`}
+      />
+      <img
+        src={flowerImages[4].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-12 ${loadedImages[4] ? 'fade-in' : ''}`}
       />
     </div>
   );
@@ -226,9 +287,9 @@ const HeroSection: React.FC = () => {
         <div className="hero">
           <div className="block-hero">
             <HeroText />
-            {/* <FlowerDecoration /> */}
+            <FlowerDecoration />
           </div>
-          <ImageGallery />
+          {/* <ImageGallery /> */}
         </div>
       </div>
     </div>
