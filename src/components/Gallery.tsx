@@ -2,6 +2,7 @@ import React from 'react';
 import useImageLoader from '../hooks/useImageLoader';
 import useSectionVisibility from '../hooks/useSectionVisibility';
 import Leaf from './Leaf';
+// import { GalleryItem } from './GalleryItem';
 
 const Gallery: React.FC = () => {
   const { sectionRef, isVisible } = useSectionVisibility();
@@ -81,14 +82,10 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ visible }) => {
                 aria-label="open lightbox"
                 aria-haspopup="dialog"
               >
+                {/* <GalleryItem src={loadedImages[index] ? galleryItems[index].src : ''} /> */}
                 <img
                   className={`image-lightbox ${loadedImages[index] ? 'fade-in' : ''}`}
                   src={item.src}
-                  style={{
-                    transform:
-                      'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-                    transformStyle: 'preserve-3d',
-                  }}
                   loading="lazy"
                 />
               </a>
@@ -100,14 +97,10 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ visible }) => {
                   aria-label="open lightbox"
                   aria-haspopup="dialog"
                 >
+                  {/* <GalleryItem src={loadedImages[index + 1] ? galleryItems[index + 1].src : ''} /> */}
                   <img
                     className={`image-lightbox ${loadedImages[index + 1] ? 'fade-in' : ''}`}
                     src={galleryItems[index + 1].src}
-                    style={{
-                      transform:
-                        'translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)',
-                      transformStyle: 'preserve-3d',
-                    }}
                     loading="lazy"
                   />
                 </a>

@@ -430,6 +430,7 @@ strong {
 }
 .lightbox-link:hover {
   box-shadow: 0 50px 80px -50px var(--accent);
+  transform: scale3d(0.95, 0.95, 1);
 }
 .image-lightbox {
   height: 100%;
@@ -746,9 +747,7 @@ strong {
     order: -9999;
   }
 }
-.lightbox-link:hover {
-  transform: scale3d(0.95, 0.95, 1);
-}
+
 .image-lightbox:hover {
   transform: scale3d(1.15, 1.15, 1);
 }
