@@ -209,7 +209,7 @@ export const FlowerDecoration: React.FC = () => {
 
   // Calculate vertical translation values based on scroll progress
   const translateYFlower1 = getAnimationValue(-2, 2, progress);
-  const translateYFlower2 = getAnimationValue(-1, 1, progress);
+  // const translateYFlower2 = getAnimationValue(-1, 1, progress);
 
   return (
     <div ref={flowerRef}>
