@@ -208,7 +208,7 @@ export const FlowerDecoration: React.FC = () => {
   // const scaleX3 = getAnimationValue(-1, -1, progress);
   const scaleY3 = getAnimationValue(1, 1.4, progress);
 
-  const scale5 = getAnimationValue(-0.9, -1.2, progress);
+  const scale5 = getAnimationValue(-0.9, -1.1, progress);
   const rotate5 = getAnimationValue(-30, -37, progress);
 
   return (
