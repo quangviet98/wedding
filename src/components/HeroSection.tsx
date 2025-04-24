@@ -203,16 +203,16 @@ export const FlowerDecoration: React.FC = () => {
   // Use the image loader hook
   const { loadedImages } = useImageLoader(flowerImages, true, 0);
 
-  // Calculate rotation values based on scroll progress
-  const rotateZ = getAnimationValue(30, 20, progress);
-  const rotateZ2 = getAnimationValue(0, 5, progress);
+  const rotateZ0 = getAnimationValue(0, 5, progress);
+  const rotateZ3 = getAnimationValue(58, 50, progress);
+  // const scaleX3 = getAnimationValue(-1, -1, progress);
+  const scaleY3 = getAnimationValue(1, 1.4, progress);
 
-  // Calculate vertical translation values based on scroll progress
-  const translateYFlower1 = getAnimationValue(-2, 2, progress);
-  // const translateYFlower2 = getAnimationValue(-1, 1, progress);
+  const scale5 = getAnimationValue(-0.9, -1.2, progress);
+  const rotate5 = getAnimationValue(-30, -37, progress);
 
   return (
-    <div ref={flowerRef}>
+    <div ref={flowerRef} style={{}}>
       <img
         src={flowerImages[0].src}
         loading="eager"
@@ -220,7 +220,7 @@ export const FlowerDecoration: React.FC = () => {
         className={`bg-img bg-0 ${loadedImages[0] ? 'fade-in' : ''}`}
         style={{
           willChange: 'transform',
-          transform: `translate3d(0px, ${0}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ2}deg) skew(0deg, 0deg)`,
+          transform: `rotateZ(${rotateZ0}deg)`,
           transformStyle: 'preserve-3d',
         }}
       />
@@ -235,11 +235,6 @@ export const FlowerDecoration: React.FC = () => {
         loading="eager"
         alt=""
         className={`bg-img bg-2 ${loadedImages[2] ? 'fade-in' : ''}`}
-        style={{
-          willChange: 'transform',
-          transform: `translate3d(0px, ${translateYFlower1}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
-          transformStyle: 'preserve-3d',
-        }}
       />
       <img
         src={flowerImages[3].src}
@@ -248,7 +243,8 @@ export const FlowerDecoration: React.FC = () => {
         className={`bg-img bg-3 ${loadedImages[3] ? 'fade-in' : ''}`}
         style={{
           willChange: 'transform',
-          transform: `translate3d(0px, ${0}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
+          transform: `rotate(${rotateZ3}deg) scaleX(-1) scaleZ(${scaleY3})`,
+          // transform: `translate3d(0px, ${0}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
           transformStyle: 'preserve-3d',
         }}
       />
@@ -264,6 +260,11 @@ export const FlowerDecoration: React.FC = () => {
         loading="eager"
         alt=""
         className={`bg-img bg-5 ${loadedImages[5] ? 'fade-in' : ''}`}
+        style={{
+          willChange: 'transform',
+          transform: `rotate(${rotate5}deg) scaleX(${scale5})`,
+          transformStyle: 'preserve-3d',
+        }}
       />
       {/* <img
         src={flowerImages[4].src}
