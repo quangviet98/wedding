@@ -6,6 +6,14 @@
     opacity: 0.2;
   }
 }
+@keyframes fadeInBg3 {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
 
 .section-hero {
   .block-hero {
@@ -21,10 +29,12 @@
     animation: fadeIn 1s ease-in-out forwards;
     opacity: 0;
     &.bg-2,
-    &.bg-3,
     &.bg-5,
     &.bg-0 {
       animation: fadeInBg2 1s ease-in-out forwards;
+    }
+    &.bg-3 {
+      animation: fadeInBg3 1s ease-in-out forwards;
     }
   }
 
@@ -196,20 +206,6 @@
       position: relative;
       min-height: 100vh;
       min-height: calc(100svh - 20px);
-    }
-    .bg-img {
-      position: absolute;
-      opacity: 0;
-    }
-    .fade-in {
-      animation: fadeIn 1s ease-in-out forwards;
-      opacity: 0;
-      &.bg-2,
-      &.bg-3,
-      &.bg-5,
-      &.bg-0 {
-        animation: fadeInBg2 1s ease-in-out forwards;
-      }
     }
 
     .bg-0 {

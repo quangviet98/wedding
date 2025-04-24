@@ -204,9 +204,9 @@ export const FlowerDecoration: React.FC = () => {
   const { loadedImages } = useImageLoader(flowerImages, true, 0);
 
   const rotateZ0 = getAnimationValue(0, 5, progress);
-  const rotateZ3 = getAnimationValue(58, 50, progress);
+  const rotateZ3 = getAnimationValue(58, 53, progress);
   // const scaleX3 = getAnimationValue(-1, -1, progress);
-  const scaleY3 = getAnimationValue(1, 1.4, progress);
+  const scale3 = getAnimationValue(1, 1.1, progress);
 
   const scale5 = getAnimationValue(-0.9, -1.1, progress);
   const rotate5 = getAnimationValue(-30, -37, progress);
@@ -243,7 +243,7 @@ export const FlowerDecoration: React.FC = () => {
         className={`bg-img bg-3 ${loadedImages[3] ? 'fade-in' : ''}`}
         style={{
           willChange: 'transform',
-          transform: `rotate(${rotateZ3}deg) scaleX(-1) scaleZ(${scaleY3})`,
+          transform: `rotate(${rotateZ3}deg) scaleX(-1) scale(${scale3})`,
           // transform: `translate3d(0px, ${0}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
           transformStyle: 'preserve-3d',
         }}
