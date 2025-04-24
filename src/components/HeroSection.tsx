@@ -14,6 +14,7 @@ import Img8 from '../assets/image-8.png';
 import Img9 from '../assets/image-9.png';
 import Img10 from '../assets/image-10.png';
 import Img11 from '../assets/image-11.png';
+import Img12 from '../assets/image-12.webp';
 // import FadeInText from './FadeInText';
 // import TypingText from './TypingText';
 import './HeroSection.scss';
@@ -74,12 +75,12 @@ const HeroText: React.FC = () => (
     /> */}
     </div>
     <div className="couple-name-wrapper">
-      <div className="couple-name">DANIEL</div>
+      <div className="couple-name">Quang Viet</div>
 
       <div className="couple-connect">And</div>
 
       <div className="couple-name" style={{ paddingLeft: '50px' }}>
-        OLIVIA
+        Ha Tuyen
       </div>
     </div>
     <div className="invite-wrapper">
@@ -190,6 +191,9 @@ const flowerImages = [
   {
     src: Img11,
   },
+  {
+    src: Img12,
+  },
 ];
 
 export const FlowerDecoration: React.FC = () => {
@@ -245,11 +249,17 @@ export const FlowerDecoration: React.FC = () => {
         alt=""
         className={`bg-img bg-5 ${loadedImages[5] ? 'fade-in' : ''}`}
       />
-      <img
+      {/* <img
         src={flowerImages[4].src}
         loading="eager"
         alt=""
         className={`bg-img bg-12 ${loadedImages[4] ? 'fade-in' : ''}`}
+      /> */}
+      <img
+        src={flowerImages[11].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-11 ${loadedImages[11] ? 'fade-in' : ''}`}
       />
     </div>
   );
