@@ -190,13 +190,7 @@ strong {
   padding-left: 6px;
   padding-right: 6px;
 }
-.section-hero {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 24px 24px 76px;
-}
+
 .image-subtitle {
   margin-bottom: 14px;
   max-width: none;
@@ -454,26 +448,7 @@ strong {
   height: 55px;
   margin-bottom: 20px;
 }
-.hero {
-  justify-content: flex-start;
-  text-align: center;
-  max-width: 700px;
-}
-.block-hero,
-.hero {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-}
-.block-hero {
-  position: relative; /* Ensure the pseudo-element is positioned correctly */
-  background-color: var(--white); /* Existing background color */
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
+
 @keyframes fadeInBackground {
   0% {
     opacity: 0;
@@ -483,22 +458,6 @@ strong {
     opacity: 0.3;
     transform: scale(1);
   }
-}
-
-.block-hero::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('./assets/bgs2.webp');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.3;
-  z-index: 1;
-  transform: scale(1);
-  animation: fadeInBackground 2s ease-out forwards;
-  will-change: opacity, transform;
 }
 
 .grid-hero,
@@ -546,8 +505,7 @@ strong {
   h4 {
     font-size: 28px;
   }
-  .section,
-  .section-hero {
+  .section {
     padding-bottom: 66px;
   }
   .section {
@@ -587,25 +545,7 @@ strong {
   .paragraph-invite {
     display: none;
   }
-  .block-hero {
-    min-height: calc(100vh - 20px);
-  }
-  .block-hero::before {
-    transform: scale(1);
-    opacity: 0.3;
-    animation: fadeInBackground 2s ease-out forwards;
-    background-position: 20%;
-  }
-  @keyframes fadeInBackground {
-    0% {
-      opacity: 0;
-      transform: scale(1.05);
-    }
-    100% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-  }
+
   .grid-hero {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
@@ -627,8 +567,7 @@ strong {
   h4 {
     font-size: 26px;
   }
-  .section,
-  .section-hero {
+  .section {
     padding-bottom: 58px;
   }
   .section {
@@ -660,9 +599,6 @@ strong {
   .grid-galleries---row {
     grid-row-gap: 10px;
   }
-  .block-hero {
-    min-height: calc(100vh - 20px);
-  }
   .grid-hero {
     align-items: stretch;
     grid-template-columns: 1fr 1fr 1fr;
@@ -683,9 +619,6 @@ strong {
   }
   h4 {
     font-size: 23px;
-  }
-  .section-hero {
-    padding: 10px 10px 54px;
   }
   .section {
     padding: 54px 10px;
