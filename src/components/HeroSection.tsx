@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import useImageLoader from '../hooks/useImageLoader';
 import useElementScrollProgress from '../hooks/useElementScrollProgress';
-// import Leaf from './Leaf';
 import Img1 from '../assets/image-1.png';
 import Img2 from '../assets/image-2.png';
 import Img3 from '../assets/image-3.png';
@@ -13,12 +12,11 @@ import Img8 from '../assets/image-8.png';
 import Img9 from '../assets/image-9.png';
 import Img10 from '../assets/image-10.png';
 import Img11 from '../assets/image-11.png';
-import Img12 from '../assets/image-12.webp';
-// import FadeInText from './FadeInText';
-// import TypingText from './TypingText';
+import Img16 from '../assets/image-16.webp';
+import Img19 from '../assets/image-19.svg';
+import Img20 from '../assets/image-20.svg';
 import './HeroSection.scss';
 import { getAnimationValue } from '../utils/animationHelpers';
-// import HeroImg from '../assets/hero-img.png'
 
 interface HeroImage {
   src: string;
@@ -68,11 +66,6 @@ const HeroText: React.FC = () => (
     <div className="save-the-date">
       <p>SAVE THE DATE</p>
       <img src={Img7} />
-      {/* <TypingText
-      text="SAVE THE DATE"
-      typingWidth="182px"
-      // className="save-the-date"
-    /> */}
     </div>
     <div className="couple-name-wrapper">
       <div className="couple-name">Quang Viet</div>
@@ -99,64 +92,10 @@ const HeroText: React.FC = () => (
         St 12345
       </div>
       <img src={Img9} width={120} />
-      {/* <p className='reception'>Reception to follow</p> */}
     </div>
-
-    {/* <Leaf visible={true} />
-    <TypingText
-      text="SAVE THE DATE"
-      typingWidth="182px"
-      // animationDelay={`${delays[3]}s`}
-      // style={{ marginBottom: "8px" }}
-      className="save-the-date"
-    />
-    <div className="couple-name-wrapper">
-      <FadeInText text={textBlocks[0]} className="couple-name" delayOffset={delays[0]} />
-      <FadeInText text={textBlocks[1]} className="couple-connect" delayOffset={delays[1]} />
-      <FadeInText text={textBlocks[2]} className="couple-name" delayOffset={delays[2]} />
-    </div>
-
-    <p className="paragraph paragraph-invite">
-      
-      <TypingText
-        text="With full hearts,"
-        typingWidth="130px"
-        animationDelay={`${delays[3]}s`}
-        style={{ marginBottom: '8px' }}
-      />
-      <br />
-      <TypingText
-        text="we joyfully invite you to celebrate our wedding"
-        typingWidth="385px"
-        animationDelay={`${delays[3] + 1.5}s`}
-        animationDuration="3s"
-      />
-    </p>
-
-    <div>
-      <div className="date-display">
-        <div className="date-row">
-          <div className="date-column">
-            <div className="date-label">SATURDAY</div>
-          </div>
-          <div className="date-column date-column-center">
-            <div className="date-month">JULY</div>
-            <div className="date-day">10</div>
-            <div className="date-year">2025</div>
-          </div>
-          <div className="date-column">
-            <div className="date-label">8:30PM</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <a href="/contact" className="link">
-      Book A Consult
-    </a> */}
   </div>
 );
 
-// Define flower images for the loader
 const flowerImages = [
   {
     src: Img1,
@@ -192,7 +131,13 @@ const flowerImages = [
     src: Img11,
   },
   {
-    src: Img12,
+    src: Img16,
+  },
+  {
+    src: Img19,
+  },
+  {
+    src: Img20,
   },
 ];
 
@@ -204,12 +149,14 @@ export const FlowerDecoration: React.FC = () => {
   const { loadedImages } = useImageLoader(flowerImages, true, 0);
 
   const rotateZ0 = getAnimationValue(0, 5, progress);
-  const rotateZ3 = getAnimationValue(58, 53, progress);
-  // const scaleX3 = getAnimationValue(-1, -1, progress);
-  const scale3 = getAnimationValue(1, 1.1, progress);
-
   const scale5 = getAnimationValue(-0.9, -1.1, progress);
   const rotate5 = getAnimationValue(-30, -37, progress);
+
+  const scale12 = getAnimationValue(0.9, 1, progress);
+  const rotate12 = getAnimationValue(20, 23, progress);
+
+  const scale13 = getAnimationValue(0.9, 1, progress);
+  const rotate13 = getAnimationValue(27, 30, progress);
 
   return (
     <div ref={flowerRef} style={{}}>
@@ -236,7 +183,7 @@ export const FlowerDecoration: React.FC = () => {
         alt=""
         className={`bg-img bg-2 ${loadedImages[2] ? 'fade-in' : ''}`}
       />
-      <img
+      {/* <img
         src={flowerImages[3].src}
         loading="eager"
         alt=""
@@ -247,7 +194,7 @@ export const FlowerDecoration: React.FC = () => {
           // transform: `translate3d(0px, ${0}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
           transformStyle: 'preserve-3d',
         }}
-      />
+      /> */}
       <img
         src={flowerImages[4].src}
         loading="eager"
@@ -272,11 +219,33 @@ export const FlowerDecoration: React.FC = () => {
         alt=""
         className={`bg-img bg-12 ${loadedImages[4] ? 'fade-in' : ''}`}
       /> */}
-      <img
+      {/* <img
         src={flowerImages[11].src}
         loading="eager"
         alt=""
         className={`bg-img bg-11 ${loadedImages[11] ? 'fade-in' : ''}`}
+      /> */}
+      <img
+        src={flowerImages[12].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-12 ${loadedImages[12] ? 'fade-in' : ''}`}
+        style={{
+          willChange: 'transform',
+          transform: `scale(${scale12}) rotate(${rotate12}deg)`,
+          transformStyle: 'preserve-3d',
+        }}
+      />
+      <img
+        src={flowerImages[13].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-13 ${loadedImages[13] ? 'fade-in' : ''}`}
+        style={{
+          willChange: 'transform',
+          transform: `scaleY(${scale13}) rotate(${rotate13}deg)`,
+          transformStyle: 'preserve-3d',
+        }}
       />
     </div>
   );

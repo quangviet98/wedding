@@ -1,7 +1,8 @@
 import React from 'react';
 import useImageLoader from '../hooks/useImageLoader';
 import useSectionVisibility from '../hooks/useSectionVisibility';
-import Leaf from './Leaf';
+// import Leaf from './Leaf';
+import ShortCouple from './ShortCouple';
 // import { GalleryItem } from './GalleryItem';
 
 const Gallery: React.FC = () => {
@@ -11,7 +12,8 @@ const Gallery: React.FC = () => {
     <div className="section" ref={sectionRef}>
       <div className="content wide">
         <div className="block-heading">
-          <Leaf visible={isVisible} />
+          {/* <Leaf visible={isVisible} /> */}
+          <ShortCouple visible={isVisible} />
           <div className="subtitle">
             Galleries
             <br />
