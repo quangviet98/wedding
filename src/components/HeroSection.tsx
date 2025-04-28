@@ -4,7 +4,9 @@ import Img2 from '../assets/image-2.png';
 import Img20 from '../assets/image-20.svg';
 import Img22 from '../assets/Image-22.webp';
 import Img23 from '../assets/Image-23.png';
+import Img32 from '../assets/Image-32.webp';
 import Img26 from '../assets/Image-26.png';
+import Img27 from '../assets/Image-27-2.png';
 import Img5 from '../assets/image-5.webp';
 import Img6 from '../assets/image-6.png';
 import Img7 from '../assets/image-7.png';
@@ -196,27 +198,19 @@ export const FlowerDecoration: React.FC = () => {
   );
 };
 
-export const ImageGallery: React.FC = () => {
-  const { loadedImages } = useImageLoader(heroImages);
-
+const OuterContent: React.FC = () => {
   return (
-    <div className="w-layout-grid grid-hero">
-      {heroImages.map((image, index) => (
-        <a
-          key={index}
-          href="#"
-          className="lightbox-link w-inline-block w-lightbox"
-          aria-label="open lightbox"
-          aria-haspopup="dialog"
-        >
-          <img
-            className={`image-lightbox ${loadedImages[index] ? 'fade-in' : ''}`}
-            src={image.src}
-            alt=""
-            loading="lazy"
-          />
-        </a>
-      ))}
+    <div className="outer-content">
+      <div className="paper-1" style={{}}></div>
+    </div>
+  );
+};
+const OuterBlockHero: React.FC = () => {
+  return (
+    <div className="outer-block-hero">
+      <div className="couple-image">
+        <img src={Img32} alt="" />
+      </div>
     </div>
   );
 };
@@ -228,8 +222,7 @@ const HeroSection: React.FC = () => {
     const bgImg = new Image();
     const heroImg = new Image();
 
-    bgImg.src =
-      'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg';
+    bgImg.src = Img27;
     heroImg.src = Img23;
 
     let bgDone = false;
@@ -254,8 +247,10 @@ const HeroSection: React.FC = () => {
 
   return (
     <div className={`section-hero ${bgLoaded ? 'background-loaded' : ''}`}>
+      <OuterContent />
       <div className="content wide">
         <div className={`hero ${bgLoaded ? 'loaded' : ''}`}>
+          <OuterBlockHero />
           <div className="block-hero">
             <HeroText />
             <FlowerDecoration />
