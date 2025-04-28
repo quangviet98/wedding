@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - temp-1 # Thay bằng branch code chính nếu khác
+      - temp-2 # Thay bằng branch code chính nếu khác
 
 jobs:
   build-and-deploy:
