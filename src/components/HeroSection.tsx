@@ -1,22 +1,16 @@
 import React, { useRef } from 'react';
-import useImageLoader from '../hooks/useImageLoader';
-import useElementScrollProgress from '../hooks/useElementScrollProgress';
-import Img1 from '../assets/image-1.png';
+import Img19 from '../assets/image-19.svg';
 import Img2 from '../assets/image-2.png';
-import Img3 from '../assets/image-3.png';
-import Img4 from '../assets/image-4.png';
+import Img20 from '../assets/image-20.svg';
+import Img22 from '../assets/Image-22.webp';
 import Img5 from '../assets/image-5.webp';
 import Img6 from '../assets/image-6.png';
 import Img7 from '../assets/image-7.png';
-import Img8 from '../assets/image-8.png';
 import Img9 from '../assets/image-9.png';
-import Img10 from '../assets/image-10.png';
-import Img11 from '../assets/image-11.png';
-import Img16 from '../assets/image-16.webp';
-import Img19 from '../assets/image-19.svg';
-import Img20 from '../assets/image-20.svg';
-import './HeroSection.scss';
+import useElementScrollProgress from '../hooks/useElementScrollProgress';
+import useImageLoader from '../hooks/useImageLoader';
 import { getAnimationValue } from '../utils/animationHelpers';
+import './HeroSection.scss';
 
 interface HeroImage {
   src: string;
@@ -98,46 +92,22 @@ const HeroText: React.FC = () => (
 
 const flowerImages = [
   {
-    src: Img1,
+    src: Img2, // Used in bg-1
   },
   {
-    src: Img2,
+    src: Img22, // Used in bg-2
   },
   {
-    src: Img3,
+    src: Img5, // Used in bg-4
   },
   {
-    src: Img4,
+    src: Img6, // Used in bg-5
   },
   {
-    src: Img5,
+    src: Img19, // Used in bg-12
   },
   {
-    src: Img6,
-  },
-  {
-    src: Img7,
-  },
-  {
-    src: Img8,
-  },
-  {
-    src: Img9,
-  },
-  {
-    src: Img10,
-  },
-  {
-    src: Img11,
-  },
-  {
-    src: Img16,
-  },
-  {
-    src: Img19,
-  },
-  {
-    src: Img20,
+    src: Img20, // Used in bg-13
   },
 ];
 
@@ -148,7 +118,7 @@ export const FlowerDecoration: React.FC = () => {
   // Use the image loader hook
   const { loadedImages } = useImageLoader(flowerImages, true, 0);
 
-  const rotateZ0 = getAnimationValue(0, 5, progress);
+  // const rotateZ0 = getAnimationValue(0, 5, progress);
   const scale5 = getAnimationValue(-0.9, -1.1, progress);
   const rotate5 = getAnimationValue(-30, -37, progress);
 
@@ -164,72 +134,36 @@ export const FlowerDecoration: React.FC = () => {
         src={flowerImages[0].src}
         loading="eager"
         alt=""
-        className={`bg-img bg-0 ${loadedImages[0] ? 'fade-in' : ''}`}
-        style={{
-          willChange: 'transform',
-          transform: `rotateZ(${rotateZ0}deg)`,
-          transformStyle: 'preserve-3d',
-        }}
+        className={`bg-img bg-1 ${loadedImages[0] ? 'fade-in' : ''}`}
       />
       <img
         src={flowerImages[1].src}
         loading="eager"
         alt=""
-        className={`bg-img bg-1 ${loadedImages[1] ? 'fade-in' : ''}`}
+        className={`bg-img bg-2 ${loadedImages[1] ? 'fade-in' : ''}`}
       />
       <img
         src={flowerImages[2].src}
         loading="eager"
         alt=""
-        className={`bg-img bg-2 ${loadedImages[2] ? 'fade-in' : ''}`}
+        className={`bg-img bg-4 ${loadedImages[2] ? 'fade-in' : ''}`}
       />
-      {/* <img
+      <img
         src={flowerImages[3].src}
         loading="eager"
         alt=""
-        className={`bg-img bg-3 ${loadedImages[3] ? 'fade-in' : ''}`}
-        style={{
-          willChange: 'transform',
-          transform: `rotate(${rotateZ3}deg) scaleX(-1) scale(${scale3})`,
-          // transform: `translate3d(0px, ${0}vh, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(${rotateZ}deg) skew(0deg, 0deg)`,
-          transformStyle: 'preserve-3d',
-        }}
-      /> */}
-      <img
-        src={flowerImages[4].src}
-        loading="eager"
-        alt=""
-        className={`bg-img bg-4 ${loadedImages[4] ? 'fade-in' : ''}`}
-      />
-
-      <img
-        src={flowerImages[5].src}
-        loading="eager"
-        alt=""
-        className={`bg-img bg-5 ${loadedImages[5] ? 'fade-in' : ''}`}
+        className={`bg-img bg-5 ${loadedImages[3] ? 'fade-in' : ''}`}
         style={{
           willChange: 'transform',
           transform: `rotate(${rotate5}deg) scaleX(${scale5})`,
           transformStyle: 'preserve-3d',
         }}
       />
-      {/* <img
+      <img
         src={flowerImages[4].src}
         loading="eager"
         alt=""
         className={`bg-img bg-12 ${loadedImages[4] ? 'fade-in' : ''}`}
-      /> */}
-      {/* <img
-        src={flowerImages[11].src}
-        loading="eager"
-        alt=""
-        className={`bg-img bg-11 ${loadedImages[11] ? 'fade-in' : ''}`}
-      /> */}
-      <img
-        src={flowerImages[12].src}
-        loading="eager"
-        alt=""
-        className={`bg-img bg-12 ${loadedImages[12] ? 'fade-in' : ''}`}
         style={{
           willChange: 'transform',
           transform: `scale(${scale12}) rotate(${rotate12}deg)`,
@@ -237,10 +171,10 @@ export const FlowerDecoration: React.FC = () => {
         }}
       />
       <img
-        src={flowerImages[13].src}
+        src={flowerImages[5].src}
         loading="eager"
         alt=""
-        className={`bg-img bg-13 ${loadedImages[13] ? 'fade-in' : ''}`}
+        className={`bg-img bg-13 ${loadedImages[5] ? 'fade-in' : ''}`}
         style={{
           willChange: 'transform',
           transform: `scaleY(${scale13}) rotate(${rotate13}deg)`,
@@ -285,7 +219,6 @@ const HeroSection: React.FC = () => {
             <HeroText />
             <FlowerDecoration />
           </div>
-          {/* <ImageGallery /> */}
         </div>
       </div>
     </div>

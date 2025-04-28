@@ -11,7 +11,7 @@
     opacity: 0;
   }
   to {
-    opacity: 0.4;
+    opacity: 0.1;
   }
 }
 
@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: center;
 
-  background-image: url('https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd53807b403f4c0b6_img_8.jpg');
+  background-image: url('https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -30,8 +30,9 @@
   min-height: 100svh;
   .content {
     display: flex;
-    padding: 24px;
+    padding: 48px;
     flex: 1;
+    overflow: hidden;
   }
 
   .hero {
@@ -42,10 +43,27 @@
     position: relative;
     width: 100%;
     text-align: center;
-    max-width: 650px;
+    max-width: 550px;
+    padding-top: 40px;
+    padding-left: 20px;
+
+    &::after {
+      background-image: url(/wedding/src/assets/Image-23.png);
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: '';
+      height: 140%;
+      left: -52%;
+      position: absolute;
+      top: -20%;
+      width: 180%;
+      z-index: 1;
+    }
   }
 
   .block-hero {
+    z-index: 2;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -54,25 +72,18 @@
     position: relative; /* Ensure the pseudo-element is positioned correctly */
     background-color: var(--white); /* Existing background color */
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-
-    border-radius: 50% 50% 50% 50% / 30% 30% 5% 5%;
-    // box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.3);
-    box-shadow:
-      0 0 10px rgba(255, 255, 255, 0.6),
-      0 0 20px rgba(255, 255, 255, 0.4);
-  }
-
-  .block-hero::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border: 2px dashed rgba(255, 255, 255, 0.5);
-    border-radius: 50% 50% 50% 50% / 10% 10% 10% 10%;
-    z-index: -1;
+    border-radius: 50% 50% 0% 0% / 35% 35% 0% 0%;
+    box-shadow: 0 10px 30px #0000001a;
+    // box-shadow: 20px -20px 30px var(--accent);
+    transition: box-shadow 0.3s;
+    background-image: url('../assets/Image-25.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &:hover {
+      box-shadow: 0 15px 40px #0003;
+      // box-shadow: 20px -20px 30px var(--accent);
+    }
   }
 
   .bg-img {
@@ -110,15 +121,14 @@
   .bg-2 {
     left: -30px;
     top: 39%;
-    transform: rotate(24deg);
     width: 180px;
     z-index: 1;
   }
   .bg-3 {
-    bottom: -40px;
-    left: -50px;
-    transform: rotate(22deg);
-    width: 200px;
+    top: -0;
+    left: 0;
+    // transform: rotate(22deg);
+    width: 100%;
     z-index: 0;
   }
   .bg-4 {
@@ -158,7 +168,7 @@
     bottom: -68px;
     left: 36px;
     transform: rotate(28deg);
-    width: 210px;
+    width: 195px;
     z-index: 0;
   }
 }
@@ -268,6 +278,15 @@
   .section-hero {
     background-image: none;
 
+    .hero {
+      padding-left: 0;
+      padding-top: 0;
+
+      &::after {
+        content: none;
+      }
+    }
+
     .content {
       display: flex;
       padding: 10px;
@@ -278,6 +297,7 @@
     .block-hero {
       border-radius: 0;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      background-position: left;
     }
 
     .bg-0 {
@@ -294,19 +314,18 @@
     }
 
     .bg-2 {
-      left: -30px;
-      top: 45%;
-      transform: rotate(24deg);
-      width: 120px;
+      left: 10px;
+      top: 55%;
+      width: 80px;
       z-index: 1;
     }
-    .bg-3 {
-      bottom: -36px;
-      left: -40px;
-      transform: rotate(22deg);
-      width: 155px;
-      z-index: 0;
-    }
+    // .bg-3 {
+    //   bottom: -36px;
+    //   left: -40px;
+    //   transform: rotate(22deg);
+    //   width: 155px;
+    //   z-index: 0;
+    // }
     .bg-4 {
       z-index: 3;
       bottom: -50px;
