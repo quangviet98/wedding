@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
  * @param options IntersectionObserver options
  * @returns Object with ref to attach to the element and visibility state
  */
-const useSectionVisibility = (options = { threshold: 0.1 }) => {
+const useSectionVisibility = (options = { threshold: 0.3 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
