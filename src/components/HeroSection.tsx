@@ -16,31 +16,6 @@ import useImageLoader from '../hooks/useImageLoader';
 import { getAnimationValue } from '../utils/animationHelpers';
 import './HeroSection.scss';
 
-interface HeroImage {
-  src: string;
-}
-
-const heroImages: HeroImage[] = [
-  {
-    src: 'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg',
-  },
-  {
-    src: 'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg',
-  },
-  {
-    src: 'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg',
-  },
-  {
-    src: 'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg',
-  },
-  {
-    src: 'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610df60220b64c18e8457e38_img_12.jpg',
-  },
-  {
-    src: 'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg',
-  },
-];
-
 const delayStep = 0.1;
 const baseDelay = 1.5;
 
