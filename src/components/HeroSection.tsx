@@ -1,8 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Img19 from '../assets/image-19.svg';
 import Img2 from '../assets/image-2.png';
 import Img20 from '../assets/image-20.svg';
 import Img22 from '../assets/Image-22.webp';
+import Img23 from '../assets/Image-23.png';
+import Img26 from '../assets/Image-26.png';
 import Img5 from '../assets/image-5.webp';
 import Img6 from '../assets/image-6.png';
 import Img7 from '../assets/image-7.png';
@@ -109,6 +111,9 @@ const flowerImages = [
   {
     src: Img20, // Used in bg-13
   },
+  {
+    src: Img26, // Used in bg-6
+  },
 ];
 
 export const FlowerDecoration: React.FC = () => {
@@ -181,6 +186,12 @@ export const FlowerDecoration: React.FC = () => {
           transformStyle: 'preserve-3d',
         }}
       />
+      <img
+        src={flowerImages[6].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-6 ${loadedImages[6] ? 'fade-in' : ''}`}
+      />
     </div>
   );
 };
@@ -211,10 +222,40 @@ export const ImageGallery: React.FC = () => {
 };
 
 const HeroSection: React.FC = () => {
+  const [bgLoaded, setBgLoaded] = useState(false);
+
+  useEffect(() => {
+    const bgImg = new Image();
+    const heroImg = new Image();
+
+    bgImg.src =
+      'https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/610c995bd5f573418e62eb65_img_11.jpg';
+    heroImg.src = Img23;
+
+    let bgDone = false;
+    let heroDone = false;
+
+    const checkDone = () => {
+      if (bgDone && heroDone) {
+        setBgLoaded(true);
+      }
+    };
+
+    bgImg.onload = () => {
+      bgDone = true;
+      checkDone();
+    };
+
+    heroImg.onload = () => {
+      heroDone = true;
+      checkDone();
+    };
+  }, []);
+
   return (
-    <div className="section-hero">
+    <div className={`section-hero ${bgLoaded ? 'background-loaded' : ''}`}>
       <div className="content wide">
-        <div className="hero">
+        <div className={`hero ${bgLoaded ? 'loaded' : ''}`}>
           <div className="block-hero">
             <HeroText />
             <FlowerDecoration />
