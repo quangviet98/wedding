@@ -139,6 +139,9 @@
     &.bg-3 {
       animation: fadeInBg3 1s ease-in-out forwards;
     }
+    &.bg-6 {
+      animation: fadeInBg6 1s ease-in-out forwards;
+    }
   }
 
   .bg-0 {
@@ -336,12 +339,6 @@
       border-radius: 0;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
       background-position: center;
-    }
-
-    .fade-in {
-      &.bg-6 {
-        animation: fadeInBg6 1s ease-in-out forwards;
-      }
     }
 
     .bg-0 {
