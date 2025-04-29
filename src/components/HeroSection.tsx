@@ -17,7 +17,7 @@ import useImageLoader from '../hooks/useImageLoader';
 import {
   decorativeAnimation,
   fadeInUp,
-  floatIn,
+  // floatIn,
   getAnimationValue,
   revealText,
 } from '../utils/animationHelpers';
