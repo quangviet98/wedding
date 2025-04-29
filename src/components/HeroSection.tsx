@@ -60,10 +60,18 @@ const HeroText: React.FC = () => {
         {/* <img src={Img7} /> */}
         <motion.img
           src={Img7}
-          variants={decorativeAnimation}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={0}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.2,
+              duration: 1,
+              type: 'spring',
+              bounce: 0.3,
+            },
+          }}
+          viewport={{ once: false, amount: 0.6 }}
         />
       </div>
       <div className="couple-name-wrapper">
