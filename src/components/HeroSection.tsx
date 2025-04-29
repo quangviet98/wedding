@@ -136,7 +136,7 @@ const HeroText: React.FC = () => {
               animate={{
                 textShadow: [
                   '0px 0px 0px var(--paragraphs)',
-                  '2px 2px 3px var(--accent)',
+                  '2px 2px 4px var(--accent)',
                   '0px 0px 0px var(--accent)',
                 ],
                 scale: [1, 1.15, 1],
