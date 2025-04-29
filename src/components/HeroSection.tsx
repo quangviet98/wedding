@@ -1,3 +1,4 @@
+import { motion, useInView } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 import Img19 from '../assets/image-19.svg';
 import Img2 from '../assets/image-2.png';
@@ -13,7 +14,13 @@ import Img7 from '../assets/image-7.png';
 import Img9 from '../assets/image-9.png';
 import useElementScrollProgress from '../hooks/useElementScrollProgress';
 import useImageLoader from '../hooks/useImageLoader';
-import { getAnimationValue } from '../utils/animationHelpers';
+import {
+  decorativeAnimation,
+  fadeInUp,
+  floatIn,
+  getAnimationValue,
+  revealText,
+} from '../utils/animationHelpers';
 import './HeroSection.scss';
 
 const delayStep = 0.1;
@@ -33,41 +40,143 @@ const delays = textBlocks.map((text) => {
   offset += text.length * delayStep;
   return current;
 });
+
 console.log('%c [ delays[4] ]-48', 'font-size:13px; background:pink; color:#bf2c9f;', delays[4]);
-const HeroText: React.FC = () => (
-  <div className="text-hero">
-    <div className="save-the-date">
-      <p>SAVE THE DATE</p>
-      <img src={Img7} />
-    </div>
-    <div className="couple-name-wrapper">
-      <div className="couple-name">Quang Viet</div>
+const HeroText: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.2 });
+  console.log('%c [ isInView ]-63', 'font-size:13px; background:pink; color:#bf2c9f;', isInView);
+  return (
+    <div className="text-hero" ref={containerRef}>
+      <div className="save-the-date">
+        <motion.p
+          variants={revealText}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={1}
+        >
+          SAVE THE DATE
+        </motion.p>
+        {/* <img src={Img7} /> */}
+        <motion.img
+          src={Img7}
+          variants={decorativeAnimation}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={0}
+        />
+      </div>
+      <div className="couple-name-wrapper">
+        <motion.div
+          className="couple-name"
+          variants={floatIn}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={1}
+        >
+          Quang Viet
+        </motion.div>
 
-      <div className="couple-connect">And</div>
+        <motion.div
+          className="couple-connect"
+          variants={fadeInUp}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={2}
+        >
+          And
+        </motion.div>
 
-      <div className="couple-name" style={{ paddingLeft: '50px' }}>
-        Ha Tuyen
+        <motion.div
+          className="couple-name"
+          style={{ paddingLeft: '50px' }}
+          variants={floatIn}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={3}
+        >
+          Ha Tuyen
+        </motion.div>
+      </div>
+      <div className="invite-wrapper">
+        <motion.div
+          className="invite-text"
+          variants={fadeInUp}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={4}
+        >
+          we invite you to join <br /> our wedding
+        </motion.div>
+
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={5}
+        >
+          <motion.div
+            className="wedding-date"
+            whileInView={{
+              y: [0, -5, 0],
+              transition: {
+                y: {
+                  repeat: Number.POSITIVE_INFINITY,
+                  duration: 3,
+                  ease: 'easeInOut',
+                  repeatDelay: 0.5,
+                },
+              },
+            }}
+          >
+            <div className="date-month">JULY</div>
+
+            <motion.div
+              className="date-day"
+              animate={{
+                textShadow: [
+                  '0px 0px 0px var(--paragraphs)',
+                  '2px 2px 3px var(--accent)',
+                  '0px 0px 0px var(--accent)',
+                ],
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                duration: 3,
+                ease: 'easeOut',
+                times: [0, 0.5, 1],
+                repeat: Infinity,
+                repeatDelay: 0.5,
+              }}
+            >
+              04
+            </motion.div>
+            <div className="date-year">2025</div>
+          </motion.div>
+        </motion.div>
+
+        <motion.div
+          className="invite-address"
+          variants={fadeInUp}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={6}
+        >
+          123 Anywhere St., Any City, <br />
+          St 12345
+        </motion.div>
+        <motion.img
+          src={Img9}
+          width={120}
+          variants={decorativeAnimation}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={7}
+        />
       </div>
     </div>
-    <div className="invite-wrapper">
-      <div className="invite-text">
-        we invite you to join <br /> our wedding
-      </div>
-
-      <div className="wedding-date">
-        <div className="date-month">JULY</div>
-        <div className="date-day">04</div>
-        <div className="date-year">2025</div>
-      </div>
-
-      <div className="invite-address">
-        123 Anywhere St., Any City, <br />
-        St 12345
-      </div>
-      <img src={Img9} width={120} />
-    </div>
-  </div>
-);
+  );
+};
 
 const flowerImages = [
   {
@@ -118,12 +227,37 @@ export const FlowerDecoration: React.FC = () => {
         alt=""
         className={`bg-img bg-1 ${loadedImages[0] ? 'fade-in' : ''}`}
       />
-      <img
+      {/* <img
         src={flowerImages[1].src}
         loading="eager"
         alt=""
         className={`bg-img bg-2 ${loadedImages[1] ? 'fade-in' : ''}`}
+      /> */}
+      <motion.img
+        src={flowerImages[1].src}
+        loading="eager"
+        alt=""
+        className={`bg-img bg-2 ${loadedImages[1] ? 'fade-in' : ''}`}
+        whileInView={{
+          scale: [1, 1.05, 1],
+          rotate: [0, 5, 0],
+          transition: {
+            scale: {
+              duration: 2,
+              ease: 'easeInOut',
+              times: [0, 0.5, 1],
+              repeat: Number.POSITIVE_INFINITY,
+            },
+            rotate: {
+              duration: 3,
+              ease: 'easeInOut',
+              times: [0, 0.3, 0.7, 1],
+              repeat: Number.POSITIVE_INFINITY,
+            },
+          },
+        }}
       />
+
       <img
         src={flowerImages[2].src}
         loading="eager"

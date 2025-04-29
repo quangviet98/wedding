@@ -185,9 +185,9 @@
   }
 
   .bg-2 {
-    left: -30px;
+    left: 0px;
     top: 39%;
-    width: 180px;
+    width: 150px;
     z-index: 1;
   }
   .bg-3 {
@@ -320,8 +320,16 @@
       font-weight: 600;
       color: var(--paragraphs);
       padding: 2px 15px;
-      border-left: 1px solid var(--border);
+      // border-left: 1px solid var(--border);
+      // border-right: 1px solid var(--border);
+    }
+    .date-month {
+      padding: 2px 15px;
       border-right: 1px solid var(--border);
+    }
+    .date-year {
+      border-left: 1px solid var(--border);
+      padding: 2px 15px;
     }
 
     .date-month,
@@ -455,6 +463,12 @@
     .couple-connect {
       color: var(--subtitle);
       font-family: Le-Jour-Script, Marcellus, sans-serif;
+    }
+  }
+
+  .invite-wrapper {
+    .wedding-date {
+      column-gap: 0;
     }
   }
 }
