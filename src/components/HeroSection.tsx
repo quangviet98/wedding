@@ -53,17 +53,17 @@ const HeroText: React.FC = () => {
           variants={revealText}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          custom={1}
+          custom={2}
         >
           SAVE THE DATE
         </motion.p>
         {/* <img src={Img7} /> */}
         <motion.img
           src={Img7}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, scale: 0.7 }}
           whileInView={{
             opacity: 1,
-            y: 0,
+            scale: 1,
             transition: {
               delay: 0.2,
               duration: 1,
@@ -77,7 +77,26 @@ const HeroText: React.FC = () => {
       <div className="couple-name-wrapper">
         <motion.div
           className="couple-name"
-          variants={floatIn}
+          variants={{
+            hidden: {
+              opacity: 0,
+              x: -150,
+              scale: 0.3,
+              filter: 'blur(4px)',
+            },
+            visible: (i: number) => ({
+              opacity: 1,
+              x: 0,
+              rotate: 0,
+              scale: 1,
+              filter: 'blur(0px)',
+              transition: {
+                delay: i * 0.25,
+                duration: 1.4,
+                ease: [0.215, 0.61, 0.355, 1], // Improved easing
+              },
+            }),
+          }}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
           custom={1}
@@ -87,10 +106,28 @@ const HeroText: React.FC = () => {
 
         <motion.div
           className="couple-connect"
-          variants={fadeInUp}
+          variants={{
+            hidden: {
+              opacity: 0,
+              y: 50,
+              filter: 'blur(8px)',
+              scale: 0,
+            },
+            visible: (i: number) => ({
+              opacity: 1,
+              y: 0,
+              filter: 'blur(0px)',
+              scale: 1,
+              transition: {
+                delay: i * 0.25,
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1], // Cubic bezier for a more elegant motion
+              },
+            }),
+          }}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          custom={2}
+          custom={1}
         >
           And
         </motion.div>
@@ -98,10 +135,29 @@ const HeroText: React.FC = () => {
         <motion.div
           className="couple-name"
           style={{ paddingLeft: '50px' }}
-          variants={floatIn}
+          variants={{
+            hidden: {
+              opacity: 0,
+              x: 150,
+              scale: 0.3,
+              filter: 'blur(4px)',
+            },
+            visible: (i: number) => ({
+              opacity: 1,
+              x: 0,
+              rotate: 0,
+              scale: 1,
+              filter: 'blur(0px)',
+              transition: {
+                delay: i * 0.25,
+                duration: 1.4,
+                ease: [0.215, 0.61, 0.355, 1], // Improved easing
+              },
+            }),
+          }}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          custom={3}
+          custom={1}
         >
           Ha Tuyen
         </motion.div>
@@ -112,7 +168,7 @@ const HeroText: React.FC = () => {
           variants={fadeInUp}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          custom={4}
+          custom={2}
         >
           we invite you to join <br /> our wedding
         </motion.div>
@@ -121,7 +177,7 @@ const HeroText: React.FC = () => {
           variants={fadeInUp}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          custom={5}
+          custom={3}
         >
           <motion.div
             className="wedding-date"
@@ -168,7 +224,7 @@ const HeroText: React.FC = () => {
           variants={fadeInUp}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          custom={6}
+          custom={4}
         >
           123 Anywhere St., Any City, <br />
           St 12345
@@ -179,7 +235,7 @@ const HeroText: React.FC = () => {
           variants={decorativeAnimation}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
-          custom={7}
+          custom={5}
         />
       </div>
     </div>
