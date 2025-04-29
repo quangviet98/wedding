@@ -45,7 +45,8 @@
     transition:
       opacity 1.2s ease,
       filter 1.2s ease;
-    z-index: 0;
+    z-index: -2;
+    will-change: opacity, filter;
   }
 
   &.background-loaded::before {
@@ -59,6 +60,8 @@
     padding: 48px;
     flex: 1;
     overflow: hidden;
+    position: relative;
+    z-index: 100;
   }
 
   .hero {
