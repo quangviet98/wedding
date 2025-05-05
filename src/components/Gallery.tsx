@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import useImageLoader from '../hooks/useImageLoader';
 import useSectionVisibility from '../hooks/useSectionVisibility';
-import ShortCouple from './ShortCouple';
 import { GalleryItem } from './GalleryItem';
+import ShortCouple from './ShortCouple';
 import SlidePreview from './SlidePreview';
 
 interface GalleryItemType {
@@ -37,10 +37,8 @@ const galleryItems: GalleryItemType[] = [
 ];
 
 const Gallery: React.FC = () => {
-  const { sectionRef, isVisible } = useSectionVisibility();
-
   return (
-    <div className="section" ref={sectionRef}>
+    <div className="section">
       <div className="content wide">
         <div className="block-heading">
           <ShortCouple />
@@ -54,7 +52,7 @@ const Gallery: React.FC = () => {
             risus et tellus magna amet morbi. Elit risus in sed dolor diam.
           </p>
         </div>
-        <GalleryComponent visible={isVisible} />
+        <GalleryComponent />
       </div>
     </div>
   );
@@ -62,12 +60,9 @@ const Gallery: React.FC = () => {
 
 export default Gallery;
 
-interface GalleryComponentProps {
-  visible: boolean;
-}
-
-const GalleryComponent: React.FC<GalleryComponentProps> = ({ visible }) => {
-  const { loadedImages } = useImageLoader(galleryItems, visible);
+const GalleryComponent: React.FC = () => {
+  const { sectionRef, isVisible } = useSectionVisibility();
+  const { loadedImages } = useImageLoader(galleryItems, isVisible);
   const [previewOpen, setPreviewOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -94,7 +89,7 @@ const GalleryComponent: React.FC<GalleryComponentProps> = ({ visible }) => {
   };
   return (
     <>
-      <div className="w-layout-grid grid-galleries">
+      <div className="w-layout-grid grid-galleries" ref={sectionRef}>
         {galleryItems.map((item, index) => {
           // Group two images together in one row
           if (index % 2 === 0) {

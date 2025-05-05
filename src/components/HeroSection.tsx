@@ -157,20 +157,7 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={3}
         >
-          <motion.div
-            className="wedding-date"
-            whileInView={{
-              y: [0, -5, 0],
-              transition: {
-                y: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  duration: 3,
-                  ease: 'easeInOut',
-                  repeatDelay: 0.5,
-                },
-              },
-            }}
-          >
+          <div className="wedding-date">
             <div className="date-month">JULY</div>
 
             <motion.div
@@ -178,8 +165,8 @@ const HeroText: React.FC = () => {
               animate={{
                 textShadow: [
                   '0px 0px 0px var(--paragraphs)',
-                  '2px 2px 4px var(--accent)',
-                  '0px 0px 0px var(--accent)',
+                  '2px 2px 4px #f6ae96',
+                  '0px 0px 0px #f6ae96',
                 ],
                 scale: [1, 1.15, 1],
               }}
@@ -194,7 +181,7 @@ const HeroText: React.FC = () => {
               04
             </motion.div>
             <div className="date-year">2025</div>
-          </motion.div>
+          </div>
         </motion.div>
 
         <motion.div
