@@ -43,13 +43,18 @@ const SlidePreview: FC<SlidePreviewProps> = ({
   }, [onPrev]);
 
   useEffect(() => {
+    const prevent = (e: Event) => e.preventDefault();
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.addEventListener('wheel', prevent, { passive: false });
+      document.addEventListener('touchmove', prevent, { passive: false });
     } else {
-      document.body.style.overflow = 'auto';
+      document.removeEventListener('wheel', prevent);
+      document.removeEventListener('touchmove', prevent);
     }
+
     return () => {
-      document.body.style.overflow = 'auto';
+      document.removeEventListener('wheel', prevent);
+      document.removeEventListener('touchmove', prevent);
     };
   }, [isOpen]);
 
