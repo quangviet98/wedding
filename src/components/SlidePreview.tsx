@@ -98,6 +98,33 @@ const SlidePreview: FC<SlidePreviewProps> = ({
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose, handleNext, handlePrev]);
 
+  // Thêm ref cho container thumbnails
+  const thumbnailsContainerRef = useRef<HTMLDivElement>(null);
+
+  // Thêm useEffect để cuộn thumbnail vào giữa khi currentIndex thay đổi
+  useEffect(() => {
+    if (isOpen && thumbnailsContainerRef.current) {
+      const container = thumbnailsContainerRef.current;
+      const thumbnails = container.querySelectorAll('.slide-preview-thumbnail-container');
+
+      if (thumbnails.length > 0 && currentIndex >= 0 && currentIndex < thumbnails.length) {
+        const selectedThumbnail = thumbnails[currentIndex] as HTMLElement;
+        const containerWidth = container.offsetWidth;
+        const thumbnailWidth = selectedThumbnail.offsetWidth;
+
+        // Tính toán vị trí để đặt thumbnail vào giữa
+        const scrollPosition =
+          selectedThumbnail.offsetLeft - containerWidth / 2 + thumbnailWidth / 2;
+
+        // Cuộn đến vị trí đó với hiệu ứng mượt mà
+        container.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth',
+        });
+      }
+    }
+  }, [currentIndex, isOpen]);
+
   // Handle touch events for swipe navigation
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartXRef.current = e.touches[0].clientX;
@@ -202,7 +229,7 @@ const SlidePreview: FC<SlidePreviewProps> = ({
               transition={{ duration: 0.3 }}
             />
           </motion.div>
-          <div className="slide-preview-thumbnails">
+          <div className="slide-preview-thumbnails" ref={thumbnailsContainerRef}>
             {images.map((image, index) => (
               <motion.div
                 key={index}
