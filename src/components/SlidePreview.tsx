@@ -43,7 +43,23 @@ const SlidePreview: FC<SlidePreviewProps> = ({
   }, [onPrev]);
 
   useEffect(() => {
-    const prevent = (e: Event) => e.preventDefault();
+    const prevent = (e: Event) => {
+      // Kiểm tra xem sự kiện có xuất phát từ .slide-preview-thumbnails không
+      const target = e.target as HTMLElement;
+      const thumbnailsContainer = document.querySelector('.slide-preview-thumbnails');
+
+      // Nếu sự kiện xuất phát từ thumbnails hoặc con của nó, cho phép cuộn
+      if (
+        thumbnailsContainer &&
+        (thumbnailsContainer === target || thumbnailsContainer.contains(target))
+      ) {
+        return; // Cho phép cuộn trong thumbnails
+      }
+
+      // Ngăn chặn cuộn ở những nơi khác
+      e.preventDefault();
+    };
+
     if (isOpen) {
       document.addEventListener('wheel', prevent, { passive: false });
       document.addEventListener('touchmove', prevent, { passive: false });
