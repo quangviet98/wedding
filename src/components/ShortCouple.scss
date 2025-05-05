@@ -24,32 +24,6 @@
   position: relative;
   margin-bottom: 20px;
 
-  &.visible {
-    .short-couple__flower {
-      animation: growFromBottom 1.8s ease forwards;
-    }
-
-    .short-couple {
-      &__name:first-child {
-        animation: fadeInUp 1s ease forwards;
-        animation-delay: 0.4s;
-      }
-      &__name:last-child {
-        animation: fadeInUp 1s ease forwards;
-        animation-delay: 0.6s;
-      }
-      &__separate {
-        animation: fadeInUp 1s ease forwards;
-        animation-delay: 0.5s;
-      }
-    }
-  }
-
-  .short-couple__flower {
-    opacity: 0;
-    transform: scale(0.8) translateY(10px);
-  }
-
   .short-couple {
     align-items: center;
     display: flex;
@@ -63,14 +37,13 @@
     &__name {
       font-size: 28px;
       color: #b5a890;
-      opacity: 0;
     }
+
     &__separate {
       display: inline-block;
       height: 36px;
       width: 1px;
       background-color: #b5a890;
-      opacity: 0;
     }
   }
 }

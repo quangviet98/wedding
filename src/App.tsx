@@ -1,14 +1,14 @@
 import './App.css';
 import Gallery from './components/Gallery';
 import HeroSection from './components/HeroSection';
-import Informations from './components/Informations';
+import Timeline from './components/Timeline';
 import Introduce from './components/Introduce';
 
 function App() {
   return (
     <div className="App">
       <HeroSection />
-      <Informations />
+      <Timeline />
       <Introduce />
       <Gallery />
     </div>

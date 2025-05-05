@@ -1,49 +1,36 @@
-// components/GalleryItem.tsx
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import React from 'react';
 
 interface GalleryItemProps {
   src: string;
   alt?: string;
+  className?: string;
+  onClick?: () => void;
 }
 
-export const GalleryItem: React.FC<GalleryItemProps> = ({ src, alt }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
-
-  useEffect(() => {
-    if (inView) controls.start('visible');
-  }, [controls, inView]);
-
+export const GalleryItem: React.FC<GalleryItemProps> = ({ src, className, onClick }) => {
   return (
-    <motion.img
-      ref={ref}
-      src={src}
-      alt={alt}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        // hidden: { opacity: 0, scale: 0.6, y: 50 },
-        // visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6 } },
-        hidden: {
-          opacity: 0,
-          y: -100,
-          // x: -100,
-          rotateY: -90,
-        },
-        visible: {
+    <div
+      className="lightbox-link w-inline-block w-lightbox"
+      onClick={onClick}
+      // whileHover={{ scale: 1.05 }}
+      // whileTap={{ scale: 0.98 }}
+    >
+      <img className={`image-lightbox ${className}`} src={src} loading="lazy" />
+      {/* <motion.img
+        src={src}
+        alt={alt}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{
           opacity: 1,
           y: 0,
-          // x:0,
-          rotateY: 0,
           transition: {
-            duration: 0.9,
-            ease: 'easeOut',
+            duration: 0.6,
+            ease: [0.25, 0.1, 0.25, 1],
           },
-        },
-      }}
-      className="image-lightbox"
-    />
+        }}
+        viewport={{ once: false, amount: 0.3 }}
+        className="image-lightbox"
+      /> */}
+    </div>
   );
 };

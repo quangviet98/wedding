@@ -1,0 +1,153 @@
+.slide-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.slide-preview-container {
+  flex: 1;
+  position: relative;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100% - 100px);
+  width: calc(100% - 150px);
+  padding: 40px 0;
+}
+
+.slide-preview-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.slide-preview-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.slide-preview-nav-button {
+  position: fixed;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 16px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.slide-preview-nav-button.prev {
+  left: 20px;
+  top: calc(50% - 50px);
+  transform: translateY(-50%);
+}
+
+.slide-preview-nav-button.next {
+  right: 20px;
+  top: calc(50% - 50px);
+  transform: translateY(-50%);
+}
+
+.slide-preview-nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Hide navigation buttons on mobile */
+@media (max-width: 768px) {
+  .slide-preview-nav-button {
+    display: none;
+  }
+}
+
+.slide-preview-thumbnails {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+/* Add mobile-specific styles */
+@media (max-width: 768px) {
+  .slide-preview-nav-button {
+    display: none;
+  }
+
+  .slide-preview-thumbnails {
+    justify-content: flex-start; /* Ensures thumbnails start from the left edge */
+    scrollbar-width: thin; /* For Firefox */
+    -ms-overflow-style: none; /* For IE and Edge */
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .slide-preview-thumbnails::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Make thumbnails slightly smaller on mobile */
+  .slide-preview-thumbnail-container {
+    width: 100px;
+    height: 70px;
+  }
+  .slide-preview-container {
+    width: calc(100% - 20px);
+  }
+}
+
+.slide-preview-thumbnail-container {
+  width: 120px;
+  height: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.slide-preview-thumbnail-container.active {
+  opacity: 1;
+  border-color: white;
+}
+
+.slide-preview-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.gallery-item-container {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+}

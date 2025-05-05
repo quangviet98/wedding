@@ -5,9 +5,9 @@ import Img2 from '../assets/image-2.png';
 import Img20 from '../assets/image-20.svg';
 import Img22 from '../assets/Image-22.webp';
 import Img23 from '../assets/Image-23.png';
-import Img32 from '../assets/Image-32.webp';
 import Img26 from '../assets/Image-26.png';
 import Img27 from '../assets/Image-27-2.png';
+import Img32 from '../assets/Image-32.webp';
 import Img5 from '../assets/image-5.webp';
 import Img6 from '../assets/image-6.png';
 import Img7 from '../assets/image-7.png';
@@ -17,35 +17,14 @@ import useImageLoader from '../hooks/useImageLoader';
 import {
   decorativeAnimation,
   fadeInUp,
-  // floatIn,
   getAnimationValue,
   revealText,
 } from '../utils/animationHelpers';
 import './HeroSection.scss';
 
-const delayStep = 0.1;
-const baseDelay = 1.5;
-
-const textBlocks = [
-  'Quang Viet',
-  'and',
-  'Ha Tuyen',
-  'With full hearts,',
-  'we joyfully invite you to celebrate our wedding',
-];
-
-let offset = baseDelay;
-const delays = textBlocks.map((text) => {
-  const current = offset;
-  offset += text.length * delayStep;
-  return current;
-});
-
-console.log('%c [ delays[4] ]-48', 'font-size:13px; background:pink; color:#bf2c9f;', delays[4]);
 const HeroText: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
-  console.log('%c [ isInView ]-63', 'font-size:13px; background:pink; color:#bf2c9f;', isInView);
   return (
     <div className="text-hero" ref={containerRef}>
       <div className="save-the-date">
@@ -57,7 +36,6 @@ const HeroText: React.FC = () => {
         >
           SAVE THE DATE
         </motion.p>
-        {/* <img src={Img7} /> */}
         <motion.img
           src={Img7}
           initial={{ opacity: 0, scale: 0.7 }}

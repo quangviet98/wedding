@@ -1,22 +1,18 @@
 import React from 'react';
+import Img33 from '../assets/image-33.png';
+import Img34 from '../assets/image-34.png';
+import Img35 from '../assets/image-35.png';
+import AnimatedImage from './AnimatedImage';
 
-const Informations: React.FC = () => {
+const Timeline: React.FC = () => {
   return (
     <div className="section">
       <div className="content">
         <div className="w-layout-grid grid-3-columns">
           <div className="service">
-            <img
-              src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/6113208e462ce0eb607c0c58_service_icon_1.png"
-              loading="lazy"
-              width="69"
-              alt=""
-              className="icon-flower"
-            />
+            <AnimatedImage src={Img33} loading="lazy" width={80} alt="" className="icon-timeline" />
             <div className="block-service">
-              <a href="/services/services-c" className="link-service w-inline-block">
-                <h4 className="heading-service">Weddings</h4>
-              </a>
+              <h4 className="link-service w-inline-block heading-service">Weddings</h4>
               <p className="paragraph-service">
                 Adipiscing mauris sed metus dictum eget morbi aliquet. Sit neque tempus eget dictum
                 velit tristique.
@@ -27,17 +23,9 @@ const Informations: React.FC = () => {
             </div>
           </div>
           <div className="service">
-            <img
-              src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/6113208e06825a1dbd654f3f_service_icon_2.png"
-              loading="lazy"
-              width="69"
-              alt=""
-              className="icon-flower"
-            />
+            <AnimatedImage src={Img34} loading="lazy" width={80} alt="" className="icon-timeline" />
             <div className="block-service">
-              <a href="/services/services-c" className="link-service w-inline-block">
-                <h4 className="heading-service">Event Design</h4>
-              </a>
+              <h4 className="link-service w-inline-block heading-service">Event Design</h4>
               <p className="paragraph-service">
                 Lectus sit turpis iaculis eu non sed turpis suscipit facilisi. Lorem morbi non morbi
                 id aliquam. Urna adipiscing odio.
@@ -48,17 +36,9 @@ const Informations: React.FC = () => {
             </div>
           </div>
           <div className="service">
-            <img
-              src="https://cdn.prod.website-files.com/6109925e44b6ab8a7601f26a/6113208e462ce00deb7c0c59_service_icon_3.png"
-              loading="lazy"
-              width="69"
-              alt=""
-              className="icon-flower"
-            />
+            <AnimatedImage src={Img35} loading="lazy" width={80} alt="" className="icon-timeline" />
             <div className="block-service">
-              <a href="/services/services-c" className="link-service w-inline-block">
-                <h4 className="heading-service">Branding</h4>
-              </a>
+              <h4 className="link-service w-inline-block heading-service">Branding</h4>
               <p className="paragraph-service">
                 Tristique sodales consectetur lectus feugiat molestie. Condimentum eu faucibus
                 dictum adipiscing.
@@ -74,4 +54,4 @@ const Informations: React.FC = () => {
   );
 };
 
-export default Informations;
+export default Timeline;
