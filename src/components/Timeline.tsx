@@ -1,7 +1,7 @@
 import React from 'react';
-import Img33 from '../assets/image-33.png';
-import Img34 from '../assets/image-34.png';
-import Img35 from '../assets/image-35.png';
+import Img33 from '../assets/Image-33.png';
+import Img34 from '../assets/Image-34.png';
+import Img35 from '../assets/Image-35.png';
 import AnimatedImage from './AnimatedImage';
 
 const Timeline: React.FC = () => {
