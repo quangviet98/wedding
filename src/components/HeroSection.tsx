@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
+import Firework from '../assets/firework.gif';
 import Img19 from '../assets/image-19.svg';
 import Img2 from '../assets/image-2.png';
 import Img20 from '../assets/image-20.svg';
@@ -27,7 +28,7 @@ const HeroText: React.FC = () => {
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
   return (
     <div className="text-hero" ref={containerRef}>
-      <div className="save-the-date">
+      {/* <div className="save-the-date">
         <motion.p
           variants={revealText}
           initial="hidden"
@@ -36,21 +37,29 @@ const HeroText: React.FC = () => {
         >
           SAVE THE DATE
         </motion.p>
+      </div> */}
+
+      <div className="the-wedding">
         <motion.img
           src={Img7}
-          initial={{ opacity: 0, scale: 0.7 }}
-          whileInView={{
-            opacity: 1,
-            scale: 1,
-            transition: {
-              delay: 0.2,
-              duration: 1,
-              type: 'spring',
-              bounce: 0.3,
-            },
-          }}
-          viewport={{ once: false, amount: 0.6 }}
+          // initial={{ opacity: 0, scale: 0.7 }}
+          // whileInView={{
+          //   opacity: 0.7,
+          //   scale: 1,
+          //   transition: {
+          //     delay: 0.2,
+          //     duration: 1,
+          //     type: 'spring',
+          //     bounce: 0.3,
+          //   },
+          // }}
+          // viewport={{ once: false, amount: 0.6 }}
+          variants={revealText}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={1}
         />
+        <img src={Firework} className="firework-effect" />
       </div>
       <div className="couple-name-wrapper">
         <motion.div
@@ -162,21 +171,24 @@ const HeroText: React.FC = () => {
 
             <motion.div
               className="date-day"
-              animate={{
-                textShadow: [
-                  '0px 0px 0px var(--paragraphs)',
-                  '2px 2px 4px #f6ae96',
-                  '0px 0px 0px #f6ae96',
-                ],
-                scale: [1, 1.15, 1],
-              }}
-              transition={{
-                duration: 3,
-                ease: 'easeOut',
-                times: [0, 0.5, 1],
-                repeat: Infinity,
-                repeatDelay: 0.5,
-              }}
+              // animate={{
+              //   textShadow: [
+              //     '0px 0px 0px var(--paragraphs)',
+              //     '2px 2px 3px #f6ae96',
+              //     '3px 3px 4px #f6ae96',
+              //     '2px 2px 3px #f6ae96',
+              //     '0px 0px 0px var(--paragraphs)',
+              //   ],
+              //   scale: [1, 1.03, 1.08, 1.12, 1.08, 1.03, 1],
+
+              // }}
+              // transition={{
+              //   duration: 3,
+              //   ease: 'easeInOut',
+              //   times: [0, 0.16, 0.32, 0.5, 0.68, 0.84, 1],
+              //   repeat: Infinity,
+              //   repeatDelay: 0.5,
+              // }}
             >
               04
             </motion.div>

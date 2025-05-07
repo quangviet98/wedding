@@ -6,12 +6,12 @@ import Introduce from './components/Introduce';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <HeroSection />
       <Timeline />
       <Introduce />
       <Gallery />
-    </div>
+    </>
   );
 }
 

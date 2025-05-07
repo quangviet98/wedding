@@ -271,6 +271,21 @@
   flex-direction: column;
   justify-content: center;
   padding: 60px 0 80px;
+
+  .the-wedding {
+    width: 200px;
+    position: relative;
+
+    .firework-effect {
+      inset: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+      width: 100%;
+      opacity: 0.7;
+    }
+  }
 }
 
 .couple-name-wrapper {
@@ -378,6 +393,12 @@
       border-radius: 0;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
       background-position: center;
+
+      .text-hero {
+        .the-wedding {
+          width: 170px;
+        }
+      }
     }
 
     .bg-0 {
