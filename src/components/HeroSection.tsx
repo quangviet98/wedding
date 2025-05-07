@@ -12,15 +12,9 @@ import Img32 from '../assets/Image-32.webp';
 import Img5 from '../assets/image-5.webp';
 import Img6 from '../assets/image-6.png';
 import Img7 from '../assets/image-7.png';
-import Img9 from '../assets/image-9.png';
 import useElementScrollProgress from '../hooks/useElementScrollProgress';
 import useImageLoader from '../hooks/useImageLoader';
-import {
-  decorativeAnimation,
-  fadeInUp,
-  getAnimationValue,
-  revealText,
-} from '../utils/animationHelpers';
+import { fadeInUp, getAnimationValue, revealText } from '../utils/animationHelpers';
 import './HeroSection.scss';
 
 const HeroText: React.FC = () => {
@@ -206,14 +200,6 @@ const HeroText: React.FC = () => {
           123 Anywhere St., Any City, <br />
           St 12345
         </motion.div>
-        <motion.img
-          src={Img9}
-          width={120}
-          variants={decorativeAnimation}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={5}
-        />
       </div>
     </div>
   );
