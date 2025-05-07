@@ -29,7 +29,7 @@ export const revealText = {
   },
   visible: (i: number) => {
     return {
-      opacity: 0.8,
+      opacity: 0.7,
       clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
       filter: 'blur(0px)',
       transition: {
