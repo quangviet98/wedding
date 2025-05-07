@@ -279,22 +279,22 @@ export const FlowerDecoration: React.FC = () => {
         loading="eager"
         alt=""
         className={`bg-img bg-2 ${loadedImages[1] ? 'fade-in' : ''}`}
-        whileInView={{
+        animate={{
           scale: [1, 1.05, 1],
           rotate: [0, 5, 0],
-          transition: {
-            scale: {
-              duration: 2,
-              ease: 'easeInOut',
-              times: [0, 0.5, 1],
-              repeat: Number.POSITIVE_INFINITY,
-            },
-            rotate: {
-              duration: 3,
-              ease: 'easeInOut',
-              times: [0, 0.3, 0.7, 1],
-              repeat: Number.POSITIVE_INFINITY,
-            },
+        }}
+        transition={{
+          scale: {
+            duration: 2,
+            ease: 'easeInOut',
+            times: [0, 0.5, 1],
+            repeat: Number.POSITIVE_INFINITY,
+          },
+          rotate: {
+            duration: 3,
+            ease: 'easeInOut',
+            times: [0, 0.3, 0.7, 1],
+            repeat: Number.POSITIVE_INFINITY,
           },
         }}
       />
