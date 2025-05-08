@@ -9,6 +9,10 @@ import Img23 from '../assets/Image-23.png';
 import Img26 from '../assets/Image-26.png';
 import Img27 from '../assets/Image-27-2.png';
 import Img32 from '../assets/Image-32.webp';
+import Img36_1 from '../assets/Image-36-1.png';
+import Img36_2 from '../assets/Image-36-2.png';
+import Img37_1 from '../assets/Image-37-1.png';
+import Img37_2 from '../assets/Image-37-2.png';
 import Img5 from '../assets/image-5.webp';
 import Img6 from '../assets/image-6.png';
 import Img7 from '../assets/image-7.png';
@@ -22,17 +26,6 @@ const HeroText: React.FC = () => {
   const isInView = useInView(containerRef, { once: false, amount: 0.2 });
   return (
     <div className="text-hero" ref={containerRef}>
-      {/* <div className="save-the-date">
-        <motion.p
-          variants={revealText}
-          initial="hidden"
-          animate={isInView ? 'visible' : 'hidden'}
-          custom={2}
-        >
-          SAVE THE DATE
-        </motion.p>
-      </div> */}
-
       <div className="the-wedding">
         <motion.img
           src={Img7}
@@ -347,6 +340,10 @@ const OuterBlockHero: React.FC = () => {
       <div className="couple-image">
         <img src={Img32} alt="" />
       </div>
+      <img src={Img36_1} alt="" className="corner-1" />
+      <img src={Img36_2} alt="" className="corner-2" />
+      <img src={Img37_1} alt="" className="corner-3" />
+      <img src={Img37_2} alt="" className="corner-4" />
     </div>
   );
 };
