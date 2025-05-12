@@ -353,28 +353,9 @@ const HeroSection: React.FC = () => {
 
   useEffect(() => {
     const bgImg = new Image();
-    const heroImg = new Image();
-
     bgImg.src = Img27;
-    heroImg.src = Img23;
-
-    let bgDone = false;
-    let heroDone = false;
-
-    const checkDone = () => {
-      if (bgDone && heroDone) {
-        setBgLoaded(true);
-      }
-    };
-
     bgImg.onload = () => {
-      bgDone = true;
-      checkDone();
-    };
-
-    heroImg.onload = () => {
-      heroDone = true;
-      checkDone();
+      setBgLoaded(true);
     };
   }, []);
 
@@ -382,7 +363,7 @@ const HeroSection: React.FC = () => {
     <div className={`section-hero ${bgLoaded ? 'background-loaded' : ''}`}>
       <OuterContent />
       <div className="content wide">
-        <div className={`hero ${bgLoaded ? 'loaded' : ''}`}>
+        <div className={'hero'}>
           <OuterBlockHero />
           <div className="block-hero">
             <HeroText />
