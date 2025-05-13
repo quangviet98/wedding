@@ -5,7 +5,6 @@ import Img19 from '../assets/image-19.svg';
 import Img2 from '../assets/image-2.png';
 import Img20 from '../assets/image-20.svg';
 import Img22 from '../assets/Image-22.webp';
-import Img23 from '../assets/Image-23.png';
 import Img26 from '../assets/Image-26.png';
 import Img27 from '../assets/Image-27-2.png';
 import Img32 from '../assets/Image-32.webp';
@@ -75,7 +74,7 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={1}
         >
-          Quang Viet
+          Quang Việt
         </motion.div>
 
         <motion.div
@@ -103,7 +102,7 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={1}
         >
-          And
+          Và
         </motion.div>
 
         <motion.div
@@ -133,7 +132,7 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={1}
         >
-          Ha Tuyen
+          Hạ Tuyên
         </motion.div>
       </div>
       <div className="invite-wrapper">
@@ -144,7 +143,7 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={2}
         >
-          we invite you to join <br /> our wedding
+          chúng tôi mời bạn tham dự <br /> lễ cưới của chúng tôi
         </motion.div>
 
         <motion.div
@@ -154,7 +153,7 @@ const HeroText: React.FC = () => {
           custom={3}
         >
           <div className="wedding-date">
-            <div className="date-month">JULY</div>
+            <div className="date-month">THÁNG 7</div>
 
             <motion.div
               className="date-day"
@@ -190,7 +189,7 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={4}
         >
-          123 Anywhere St., Any City, <br />
+          123 Đường Bất Kỳ, Thành Phố Bất Kỳ, <br />
           St 12345
         </motion.div>
       </div>

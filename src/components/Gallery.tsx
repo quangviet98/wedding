@@ -43,10 +43,10 @@ const Gallery: React.FC = () => {
         <div className="block-heading">
           <ShortCouple />
           <div className="subtitle">
-            Galleries
+            Bộ sưu tập
             <br />
           </div>
-          <h2 className="heading">Your vision made real</h2>
+          <h2 className="heading">Hiện thực hóa tầm nhìn của bạn</h2>
           <p className="paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus hendrerit dolor lorem
             risus et tellus magna amet morbi. Elit risus in sed dolor diam.

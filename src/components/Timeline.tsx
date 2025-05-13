@@ -12,39 +12,39 @@ const Timeline: React.FC = () => {
           <div className="service">
             <AnimatedImage src={Img33} loading="lazy" width={80} alt="" className="icon-timeline" />
             <div className="block-service">
-              <h4 className="link-service w-inline-block heading-service">Weddings</h4>
+              <h4 className="link-service w-inline-block heading-service">Lễ cưới</h4>
               <p className="paragraph-service">
                 Adipiscing mauris sed metus dictum eget morbi aliquet. Sit neque tempus eget dictum
                 velit tristique.
               </p>
               <a href="/services/services-c" className="link">
-                learn more
+                tìm hiểu thêm
               </a>
             </div>
           </div>
           <div className="service">
             <AnimatedImage src={Img34} loading="lazy" width={80} alt="" className="icon-timeline" />
             <div className="block-service">
-              <h4 className="link-service w-inline-block heading-service">Event Design</h4>
+              <h4 className="link-service w-inline-block heading-service">Thiết kế sự kiện</h4>
               <p className="paragraph-service">
                 Lectus sit turpis iaculis eu non sed turpis suscipit facilisi. Lorem morbi non morbi
                 id aliquam. Urna adipiscing odio.
               </p>
               <a href="/services/services-c" className="link">
-                learn more
+                tìm hiểu thêm
               </a>
             </div>
           </div>
           <div className="service">
             <AnimatedImage src={Img35} loading="lazy" width={80} alt="" className="icon-timeline" />
             <div className="block-service">
-              <h4 className="link-service w-inline-block heading-service">Branding</h4>
+              <h4 className="link-service w-inline-block heading-service">Thương hiệu</h4>
               <p className="paragraph-service">
                 Tristique sodales consectetur lectus feugiat molestie. Condimentum eu faucibus
                 dictum adipiscing.
               </p>
               <a href="/services/services-c" className="link">
-                learn more
+                tìm hiểu thêm
               </a>
             </div>
           </div>

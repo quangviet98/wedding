@@ -1,16 +1,30 @@
 @font-face {
   font-display: swap;
+  font-family: DancingScript;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Dancing-Script.ttf') format('truetype');
+}
+/* @font-face {
+  font-display: swap;
   font-family: Marcellus;
   font-style: normal;
   font-weight: 400;
   src: url('/fonts/Marcellus-Regular.ttf') format('truetype');
-}
+} */
 @font-face {
   font-display: swap;
   font-family: Simple-Serenity-Script;
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/Simple-Serenity-Script.ttf') format('truetype');
+  src: url('/fonts/Simple-Serenity-Script.otf') format('truetype');
+}
+@font-face {
+  font-display: swap;
+  font-family: Simple-Serenity-Serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Simple-Serenity-Serif.otf') format('truetype');
 }
 @font-face {
   font-display: swap;
@@ -19,13 +33,7 @@
   font-weight: 400;
   src: url('/fonts/Le-Jour-Script.otf') format('truetype');
 }
-@font-face {
-  font-display: swap;
-  font-family: tyscript;
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/tyscript-rg.woff2') format('truetype');
-}
+
 section {
   display: block;
 }
@@ -142,7 +150,7 @@ body {
   color: var(--paragraphs);
   display: flex;
   flex-direction: column;
-  font-family: Marcellus, sans-serif;
+  font-family: DancingScript, sans-serif;
   font-size: 18px;
   justify-content: flex-start;
   line-height: 180%;
@@ -203,7 +211,7 @@ strong {
 }
 .link,
 .subtitle {
-  font-family: Marcellus, sans-serif;
+  font-family: DancingScript, sans-serif;
   font-weight: 500;
   letter-spacing: 2px;
   line-height: 140%;
@@ -229,12 +237,6 @@ strong {
   box-shadow: 0 10px 20px -12px var(--accent);
 }
 
-.heading-hero {
-  max-width: 890px;
-  font-family: Le-Jour-Script, Marcellus, sans-serif;
-  margin: 32px auto;
-  font-size: 46px;
-}
 .section {
   justify-content: center;
   padding: 76px 20px;
@@ -359,13 +361,13 @@ strong {
   width: 100%;
 }
 .heading {
-  max-width: 730px;
+  max-width: 800px;
 }
 .button {
   background-color: #fff0;
   border: 1px solid var(--accent);
   color: var(--heading);
-  font-family: Marcellus, sans-serif;
+  font-family: DancingScript, sans-serif;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 2px;

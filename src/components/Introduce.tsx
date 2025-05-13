@@ -82,16 +82,16 @@ function Introduce() {
             <div className="postcard-text">
               <Leaf visible={isVisible} />
               <div className="subtitle">
-                who we are
+                chúng tôi là ai
                 <br />
               </div>
-              <h2 className="heading">Weave story into every thread of your event</h2>
+              <h2 className="heading">Dệt nên câu chuyện trong từng chi tiết của sự kiện</h2>
               <p className="paragraph">
                 Cras urna sed purus magna morbi morbi congue suspendisse. Est faucibus hendrerit
                 donec nisi, feugiat suscipit eu, sit. Orci euismod nibh.
               </p>
               <a href="/about/about-c" className="button w-button">
-                more about us
+                tìm hiểu thêm về chúng tôi
               </a>
             </div>
           </div>
