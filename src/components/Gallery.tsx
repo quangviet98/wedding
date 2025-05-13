@@ -42,15 +42,9 @@ const Gallery: React.FC = () => {
       <div className="content wide">
         <div className="block-heading">
           <ShortCouple />
-          <div className="subtitle">
-            Bộ sưu tập
-            <br />
-          </div>
-          <h2 className="heading">Hiện thực hóa tầm nhìn của bạn</h2>
-          <p className="paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus hendrerit dolor lorem
-            risus et tellus magna amet morbi. Elit risus in sed dolor diam.
-          </p>
+          {/* <div className="subtitle">Khoảnh khắc yêu thương</div> */}
+          <h2 className="heading">Ngày chung đôi</h2>
+          <p className="sub-heading">Một chương mới trong câu chuyện tình yêu của chúng mình.</p>
         </div>
         <GalleryComponent />
       </div>
