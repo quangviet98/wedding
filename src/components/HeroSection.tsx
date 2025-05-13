@@ -143,7 +143,9 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={2}
         >
-          chúng tôi mời bạn tham dự <br /> lễ cưới của chúng tôi
+          Trân trọng mời bạn đến
+          <br />
+          chung vui
         </motion.div>
 
         <motion.div
