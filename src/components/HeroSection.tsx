@@ -191,7 +191,8 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={4}
         >
-          123 Nguyễn Tất Thành - Lương Sơn <br />
+          123 Nguyễn Tất Thành, Lương Sơn,
+          <br />
           Bắc Bình, Bình Thuận
         </motion.div>
       </div>
