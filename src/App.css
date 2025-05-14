@@ -279,6 +279,9 @@ strong {
   margin-bottom: 24px;
   font-size: 24px;
 }
+.service .paragraph-service {
+  margin-bottom: 0;
+}
 .block-service {
   align-items: center;
   display: flex;
