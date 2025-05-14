@@ -2,7 +2,7 @@ import useElementScrollProgress from '../hooks/useElementScrollProgress';
 import useImageLoader from '../hooks/useImageLoader';
 import useSectionVisibility from '../hooks/useSectionVisibility';
 import { getAnimationValue, getClampedAnimationValue } from '../utils/animationHelpers';
-import Leaf from './Leaf';
+// import Leaf from './Leaf';
 import './Introduce.scss';
 import { useCountDown } from '../hooks/useCountDown';
 import { useState } from 'react';
