@@ -277,6 +277,7 @@ strong {
 }
 .paragraph-service {
   margin-bottom: 24px;
+  font-size: 24px;
 }
 .block-service {
   align-items: center;
@@ -588,8 +589,11 @@ strong {
     grid-template-columns: 1fr;
     justify-items: center;
   }
+  .paragraph-service {
+    font-size: 20px;
+  }
   .service {
-    width: 80%;
+    width: 85%;
   }
   .grid-postcard {
     grid-template-columns: 1fr;
@@ -627,7 +631,7 @@ strong {
     font-size: 34px;
   }
   h4 {
-    font-size: 23px;
+    /* font-size: 23px; */
   }
   .section {
     padding: 54px 10px;

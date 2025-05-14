@@ -10,42 +10,52 @@ const Timeline: React.FC = () => {
       <div className="content">
         <div className="w-layout-grid grid-3-columns">
           <div className="service">
-            <AnimatedImage src={Img33} loading="lazy" width={80} alt="" className="icon-timeline" />
+            <AnimatedImage
+              src={Img33}
+              loading="lazy"
+              width={100}
+              alt=""
+              className="icon-timeline"
+            />
             <div className="block-service">
-              <h4 className="link-service w-inline-block heading-service">Lễ cưới</h4>
+              <h4 className="link-service w-inline-block heading-service">11:00</h4>
+              <h4 className="link-service w-inline-block heading-service">
+                "Alo alo" điểm danh nè!
+              </h4>
               <p className="paragraph-service">
-                Adipiscing mauris sed metus dictum eget morbi aliquet. Sit neque tempus eget dictum
-                velit tristique.
+                Lên đồ xinh tươi đến "chộp" hình cháy máy với cô dâu chú rể nè!
               </p>
-              <a href="/services/services-c" className="link">
-                tìm hiểu thêm
-              </a>
             </div>
           </div>
           <div className="service">
-            <AnimatedImage src={Img34} loading="lazy" width={80} alt="" className="icon-timeline" />
+            <AnimatedImage
+              src={Img34}
+              loading="lazy"
+              width={100}
+              alt=""
+              className="icon-timeline"
+            />
             <div className="block-service">
-              <h4 className="link-service w-inline-block heading-service">Thiết kế sự kiện</h4>
+              <h4 className="link-service w-inline-block heading-service">12:00</h4>
+              <h4 className="link-service w-inline-block heading-service">"Yes, I do!"</h4>
               <p className="paragraph-service">
-                Lectus sit turpis iaculis eu non sed turpis suscipit facilisi. Lorem morbi non morbi
-                id aliquam. Urna adipiscing odio.
+                Chứng kiến tụi mình "về chung một nhà" nha! Hồi hộp quá!
               </p>
-              <a href="/services/services-c" className="link">
-                tìm hiểu thêm
-              </a>
+              {/* <p className="paragraph-service">Đến xem tụi mình "chốt deal" cuộc đời nha!</p> */}
             </div>
           </div>
           <div className="service">
-            <AnimatedImage src={Img35} loading="lazy" width={80} alt="" className="icon-timeline" />
+            <AnimatedImage
+              src={Img35}
+              loading="lazy"
+              width={100}
+              alt=""
+              className="icon-timeline"
+            />
             <div className="block-service">
-              <h4 className="link-service w-inline-block heading-service">Thương hiệu</h4>
-              <p className="paragraph-service">
-                Tristique sodales consectetur lectus feugiat molestie. Condimentum eu faucibus
-                dictum adipiscing.
-              </p>
-              <a href="/services/services-c" className="link">
-                tìm hiểu thêm
-              </a>
+              <h4 className="link-service w-inline-block heading-service">12:30</h4>
+              <h4 className="link-service w-inline-block heading-service">"2 3 Zooô!" Cạn ly!</h4>
+              <p className="paragraph-service">Cạn ly trăm phần trăm chúc phúc cho tụi mình nha!</p>
             </div>
           </div>
         </div>
