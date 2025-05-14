@@ -3,7 +3,9 @@ import useImageLoader from '../hooks/useImageLoader';
 import useSectionVisibility from '../hooks/useSectionVisibility';
 import { getAnimationValue, getClampedAnimationValue } from '../utils/animationHelpers';
 import Leaf from './Leaf';
-
+import './Introduce.scss';
+import { useCountDown } from '../hooks/useCountDown';
+import { useState } from 'react';
 // Animation parameters
 const ANIMATION_CONFIG = {
   scale: { start: 1, end: 1.15 },
@@ -27,6 +29,11 @@ const images = [
   },
 ];
 function Introduce() {
+  const [time] = useState(Number(new Date('2025-07-05T00:00:00')) - Number(new Date()));
+  const { days, hours, minutes, seconds } = useCountDown({
+    time: time,
+  });
+
   const { isVisible, sectionRef } = useSectionVisibility({ threshold: 0.1 });
   const progress = useElementScrollProgress(sectionRef);
   const { loadedImages } = useImageLoader(images, isVisible, 0);
@@ -80,19 +87,37 @@ function Introduce() {
             className="postcard---block-right"
           >
             <div className="postcard-text">
-              <Leaf visible={isVisible} />
-              <div className="subtitle">
-                chúng tôi là ai
-                <br />
+              <div className="name-wrapper">
+                <h4>Quang Việt</h4>
+                <span>&</span>
+                <h4>Hạ Tuyên</h4>
               </div>
-              <h2 className="heading">Dệt nên câu chuyện trong từng chi tiết của sự kiện</h2>
-              <p className="paragraph">
-                Cras urna sed purus magna morbi morbi congue suspendisse. Est faucibus hendrerit
-                donec nisi, feugiat suscipit eu, sit. Orci euismod nibh.
+              <p className="paragraph fs-24 text-center">
+                Rất mong nhận được sự xác nhận của bạn để chúng mình chuẩn bị đón tiếp chu đáo nhất
               </p>
               <a href="/about/about-c" className="button w-button">
-                tìm hiểu thêm về chúng tôi
+                XÁC NHẬN THAM DỰ
               </a>
+
+              <div className="sub-wedding-date">5 Tháng 7 2025</div>
+              <div className="count-down">
+                <div className="count-item">
+                  <div>{`0${days}`.slice(-2)}</div>
+                  <div>Ngày</div>
+                </div>
+                <div className="count-item">
+                  <div>{`0${hours}`.slice(-2)}</div>
+                  <div>Giờ</div>
+                </div>
+                <div className="count-item">
+                  <div>{`0${minutes}`.slice(-2)}</div>
+                  <div>Phút</div>
+                </div>
+                <div className="count-item">
+                  <div>{`0${seconds}`.slice(-2)}</div>
+                  <div>Giây</div>
+                </div>
+              </div>
             </div>
           </div>
           <div

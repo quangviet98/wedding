@@ -8,6 +8,7 @@ const Timeline: React.FC = () => {
   return (
     <div className="section">
       <div className="content">
+        <h2 style={{ marginBottom: '36px' }}>Sự kiện ngày cưới</h2>
         <div className="w-layout-grid grid-3-columns">
           <div className="service">
             <AnimatedImage

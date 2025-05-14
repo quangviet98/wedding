@@ -1,0 +1,92 @@
+.postcard-text {
+  align-items: center;
+
+  .name-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    h4 {
+      margin-bottom: 0;
+    }
+  }
+
+  .sub-wedding-date {
+    font-size: 36px;
+    padding: 40px 0;
+    position: relative;
+    margin-top: 40px;
+    word-spacing: 8px;
+    color: var(--accent);
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 24px;
+      background-image: url('../assets/decor-date.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      position: absolute;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  .count-down {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    margin-top: 40px;
+    color: var(--accent);
+
+    .count-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      div:first-child {
+        font-size: 28px;
+      }
+      div:last-child {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .postcard-text {
+    .sub-wedding-date {
+      font-size: 32px;
+      padding: 32px 0;
+    }
+    .count-down {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+
+      .count-item {
+        &:last-child {
+          padding-top: 30px;
+          grid-column: 1 / -1;
+        }
+
+        div:first-child {
+          font-size: 24px;
+        }
+        div:last-child {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
