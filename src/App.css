@@ -14,10 +14,10 @@
 } */
 @font-face {
   font-display: swap;
-  font-family: Simple-Serenity-Script;
+  font-family: FleurDeLeah-Regular;
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/Simple-Serenity-Script.otf') format('truetype');
+  src: url('/fonts/FleurDeLeah-Regular.ttf') format('truetype');
 }
 @font-face {
   font-display: swap;
@@ -645,7 +645,7 @@ strong {
   }
   .postcard---block-right {
     margin-top: 10px;
-    padding-bottom: 65px;
+    padding-bottom: 40px;
     padding-top: 65px;
   }
   .flower-postcard---a {

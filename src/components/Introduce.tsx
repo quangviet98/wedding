@@ -92,14 +92,15 @@ function Introduce() {
                 <span>&</span>
                 <h4>Hạ Tuyên</h4>
               </div>
-              <p className="paragraph fs-24 text-center">
-                Rất mong nhận được sự xác nhận của bạn để chúng mình chuẩn bị đón tiếp chu đáo nhất
+              <p className="paragraph-service text-center">
+                Cuối cùng thì tụi mình cũng "chốt đơn" rồi!
+                <br /> Đến "witness" cho tụi mình nha bạn iu ơi!
               </p>
               <a href="/about/about-c" className="button w-button">
-                XÁC NHẬN THAM DỰ
+                Xác nhận tham dự
               </a>
 
-              <div className="sub-wedding-date">5 Tháng 7 2025</div>
+              {/* <div className="sub-wedding-date">5 Tháng 7 2025</div> */}
               <div className="count-down">
                 <div className="count-item">
                   <div>{`0${days}`.slice(-2)}</div>

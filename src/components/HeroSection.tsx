@@ -102,12 +102,11 @@ const HeroText: React.FC = () => {
           animate={isInView ? 'visible' : 'hidden'}
           custom={1}
         >
-          Và
+          &
         </motion.div>
 
         <motion.div
           className="couple-name"
-          style={{ paddingLeft: '50px' }}
           variants={{
             hidden: {
               opacity: 0,
@@ -155,7 +154,7 @@ const HeroText: React.FC = () => {
           custom={3}
         >
           <div className="wedding-date">
-            <div className="date-month">THÁNG 7</div>
+            <div className="date-month">Tháng 7</div>
 
             <motion.div
               className="date-day"
@@ -178,7 +177,7 @@ const HeroText: React.FC = () => {
               //   repeatDelay: 0.5,
               // }}
             >
-              04
+              05
             </motion.div>
             <div className="date-year">2025</div>
           </div>

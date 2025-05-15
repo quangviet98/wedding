@@ -299,19 +299,19 @@
   justify-content: center;
   column-gap: 40px;
   row-gap: 30px;
-  padding-right: 20px;
 
   .couple-name {
     font-size: 32px;
     letter-spacing: 4px;
-    font-family: Simple-Serenity-Script, sans-serif;
-    font-size: 56px;
+    font-family: FleurDeLeah-Regular, sans-serif;
+    font-size: 48px;
     letter-spacing: 4px;
-    font-weight: 600;
+    color: var(--heading);
   }
   .couple-connect {
     color: var(--subtitle);
-    font-family: Le-Jour-Script, DancingScript, sans-serif;
+    font-family: FleurDeLeah-Regular, sans-serif;
+    font-size: 28px;
   }
 }
 
@@ -328,34 +328,26 @@
   }
 
   .wedding-date {
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 4px;
     display: flex;
     align-items: center;
-    column-gap: 10px;
+    column-gap: 20px;
     padding: 24px 24px 24px 0px;
+    font-family: FleurDeLeah-Regular, sans-serif;
 
     .date-day {
-      font-size: 24px;
-      font-weight: 600;
+      font-size: 32px;
+      font-weight: 700;
       color: var(--paragraphs);
-      padding: 2px 15px;
-      // border-left: 1px solid var(--border);
-      // border-right: 1px solid var(--border);
-    }
-    .date-month {
-      padding: 2px 15px;
-      border-right: 1px solid var(--border);
-    }
-    .date-year {
+      padding: 2px 20px;
       border-left: 1px solid var(--border);
-      padding: 2px 15px;
+      border-right: 1px solid var(--border);
     }
 
     .date-month,
     .date-year {
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 18px;
       color: var(--paragraphs);
     }
   }
@@ -486,20 +478,35 @@
     .couple-name {
       font-size: 32px;
       letter-spacing: 4px;
-      font-family: Simple-Serenity-Script, sans-serif;
-      font-size: 44px;
+      font-family: FleurDeLeah-Regular, sans-serif;
+      font-size: 36px;
       letter-spacing: 4px;
-      font-weight: 600;
     }
     .couple-connect {
+      font-size: 32px;
       color: var(--subtitle);
-      font-family: Le-Jour-Script, DancingScript, sans-serif;
+      font-family: FleurDeLeah-Regular, sans-serif;
     }
   }
 
   .invite-wrapper {
+    .invite-text {
+    }
+
     .wedding-date {
-      column-gap: 0;
+      column-gap: 16px;
+      .date-day {
+        font-size: 28px;
+      }
+
+      .date-month,
+      .date-year {
+        font-size: 18px;
+      }
+    }
+
+    .invite-address {
+      font-size: 18px;
     }
   }
 }

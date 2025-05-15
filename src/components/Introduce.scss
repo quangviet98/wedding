@@ -6,9 +6,10 @@
     align-items: center;
     gap: 16px;
     margin-bottom: 24px;
-
+    font-family: FleurDeLeah-Regular, sans-serif;
     h4 {
       margin-bottom: 0;
+      font-size: 36px;
     }
   }
 
@@ -47,6 +48,7 @@
     width: 100%;
     margin-top: 40px;
     color: var(--accent);
+    font-family: FleurDeLeah-Regular, sans-serif;
 
     .count-item {
       display: flex;
@@ -66,19 +68,24 @@
 
 @media screen and (max-width: 479px) {
   .postcard-text {
+    .name-wrapper {
+      h4 {
+        font-size: 28px;
+      }
+    }
     .sub-wedding-date {
       font-size: 32px;
       padding: 32px 0;
     }
     .count-down {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
+      // grid-template-columns: repeat(3, 1fr);
+      // grid-template-rows: auto auto;
 
       .count-item {
-        &:last-child {
-          padding-top: 30px;
-          grid-column: 1 / -1;
-        }
+        // &:last-child {
+        //   padding-top: 30px;
+        //   grid-column: 1 / -1;
+        // }
 
         div:first-child {
           font-size: 24px;
