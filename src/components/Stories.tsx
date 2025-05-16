@@ -161,7 +161,7 @@ function Stories() {
                   viewport={{ once: false, amount: 'some' }}
                   transition={{
                     duration: 1,
-                    ease: 'anticipate',
+                    ease: 'easeInOut',
                   }}
                   onViewportEnter={() => handleLeftAnimationComplete(index)}
                   onViewportLeave={() => handleLeftAnimationReset(index)}
@@ -188,8 +188,8 @@ function Stories() {
                   whileInView={{ x: 0, opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: false, amount: 'some', margin: '-100px' }}
                   transition={{
-                    duration: 0.6,
-                    ease: 'anticipate',
+                    duration: 0.3,
+                    ease: 'easeInOut',
                     opacity: { duration: 1 },
                   }}
                   onViewportEnter={() => handleRightAnimationComplete(index)}
