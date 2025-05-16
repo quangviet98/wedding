@@ -23,6 +23,8 @@
 .short-couple-container {
   position: relative;
   margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
 
   .short-couple {
     align-items: center;
