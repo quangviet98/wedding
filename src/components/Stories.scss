@@ -88,7 +88,7 @@
   font-weight: 700;
 
   &::after {
-    background-image: url(/wedding/src/assets/Image-39.png);
+    background-image: url('../assets/Image-39.png');
     background-position: 50% 40%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -211,7 +211,7 @@
       position: relative;
 
       &::after {
-        background-image: url(/wedding/src/assets/Image-40.png);
+        background-image: url('../assets/Image-40.png');
         background-position: 50%;
         background-repeat: no-repeat;
         background-size: contain;
