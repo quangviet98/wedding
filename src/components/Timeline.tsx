@@ -6,7 +6,7 @@ import AnimatedImage from './AnimatedImage';
 
 const Timeline: React.FC = () => {
   return (
-    <div className="section">
+    <div className="section time-line">
       <div className="content">
         <h2 className="section-title" style={{ marginBottom: '36px' }}>
           Sự kiện ngày cưới

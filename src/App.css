@@ -465,6 +465,12 @@ strong {
 .link-service:hover {
   opacity: 0.7;
 }
+.time-line .link-service {
+  background-image: url('./assets/Image-42.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .icon-timeline {
   margin-bottom: 20px;
 }
