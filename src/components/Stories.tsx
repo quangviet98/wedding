@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Image38 from '../assets/Image-38.png';
 import Image41 from '../assets/Image-41.png';
 import useWindowSize from '../hooks/useWindowSize';
@@ -35,6 +36,23 @@ const stories: StoryItem[] = [
 
 function Stories() {
   const { width } = useWindowSize();
+  const [leftAnimationComplete, setLeftAnimationComplete] = useState<boolean[]>([]);
+  const handleLeftAnimationReset = (index: number) => {
+    setLeftAnimationComplete((prev) => {
+      const newState = [...prev];
+      newState[index] = false;
+      return newState;
+    });
+  };
+  const handleLeftAnimationComplete = (index: number) => {
+    setTimeout(() => {
+      setLeftAnimationComplete((prev) => {
+        const newState = [...prev];
+        newState[index] = true;
+        return newState;
+      });
+    }, 1000);
+  };
   return (
     <div className="stories-section">
       <ShortCouple />
@@ -45,7 +63,7 @@ function Stories() {
           <p className="paragraph-service">Những dấu mốc đáng nhớ trên hành trình yêu thương</p>
         </div>
         <div className="stories-timeline">
-          {stories.map((story) => (
+          {stories.map((story, index) => (
             <motion.div
               key={story.date}
               className={'story-item'}
@@ -62,41 +80,46 @@ function Stories() {
                 src={Image38}
                 className="story-flower-1"
                 initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                whileInView={
+                  leftAnimationComplete[index] || width <= 767
+                    ? { opacity: 1, scale: 1 }
+                    : { opacity: 0, scale: 0.5 }
+                }
                 viewport={{ once: false, margin: '-100px', amount: 'some' }}
                 transition={{
                   duration: 0.8,
-                  delay: 0.5,
                   ease: 'easeOut',
                   scale: {
-                    delay: 0.5,
                     type: 'spring',
                     stiffness: 100,
                     damping: 15,
-                    duration: 0.6, // Longer duration for scale
+                    duration: 0.6,
                   },
                 }}
-                style={{ rotate: 50 }} // Move the rotation to inline style
+                style={{ rotate: 50 }}
               />
               <motion.img
                 src={Image41}
                 className="story-flower-2"
                 initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 0.9, scale: 1 }}
+                animate={{ opacity: 0, scale: 0.5 }}
+                whileInView={
+                  leftAnimationComplete[index] || width <= 767
+                    ? { opacity: 0.9, scale: 1 }
+                    : { opacity: 0, scale: 0.5 }
+                }
                 viewport={{ once: false, margin: '-100px', amount: 'some' }}
                 transition={{
                   duration: 0.8,
-                  delay: 0.5,
                   ease: 'easeOut',
                   scale: {
-                    delay: 0.5,
                     type: 'spring',
                     stiffness: 100,
                     damping: 15,
-                    duration: 0.6, // Longer duration for scale
+                    duration: 0.6,
                   },
                 }}
-                style={{ rotate: width > 767 ? 37 : -12 }} // Move the rotation to inline style
+                style={{ rotate: width > 767 ? 37 : -12 }}
               />
 
               <div className="story-content">
@@ -112,8 +135,9 @@ function Stories() {
                   transition={{
                     duration: 1,
                     ease: 'anticipate',
-                    opacity: { duration: 0.6 },
                   }}
+                  onViewportEnter={() => handleLeftAnimationComplete(index)}
+                  onViewportLeave={() => handleLeftAnimationReset(index)}
                 >
                   <img
                     src={
@@ -134,7 +158,7 @@ function Stories() {
                   transition={{
                     duration: 0.6,
                     ease: 'anticipate',
-                    opacity: { duration: 0.6 },
+                    opacity: { duration: 1 },
                   }}
                 >
                   <div className="story-content__right-wrapper">
