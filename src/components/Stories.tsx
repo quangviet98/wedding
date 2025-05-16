@@ -148,13 +148,13 @@ function Stories() {
                 <motion.div
                   className="story-content__left"
                   initial={
-                    width > 767
-                      ? { x: '-100%', opacity: 0, y: 0, scale: 0.7 }
+                    width > 1350
+                      ? { x: '-60%', opacity: 0, y: 0, scale: 0.7 }
                       : { x: 0, opacity: 0, y: 50, scale: 0.7 }
                   }
                   animate={
-                    width > 767
-                      ? { x: '-100%', opacity: 0, y: 0, scale: 0.7 }
+                    width > 1350
+                      ? { x: '-60%', opacity: 0, y: 0, scale: 0.7 }
                       : { x: 0, opacity: 0, y: 50, scale: 0.7 }
                   }
                   whileInView={{ x: 0, opacity: 1, y: 0, scale: 1 }}
@@ -176,17 +176,17 @@ function Stories() {
                 <motion.div
                   className="story-content__right"
                   initial={
-                    width > 767
-                      ? { x: '100%', opacity: 0, y: 0, scale: 0.2 }
+                    width > 1350
+                      ? { x: '60%', opacity: 0, y: 0, scale: 0.2 }
                       : { x: 0, opacity: 0, y: 50, scale: 0.7 }
                   }
                   animate={
-                    width > 767
-                      ? { x: '100%', opacity: 0, y: 0, scale: 0.2 }
+                    width > 1350
+                      ? { x: '60%', opacity: 0, y: 0, scale: 0.2 }
                       : { x: 0, opacity: 0, y: 50, scale: 0.7 }
                   }
                   whileInView={{ x: 0, opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: false, amount: 'some' }}
+                  viewport={{ once: false, amount: 'some', margin: '-100px' }}
                   transition={{
                     duration: 0.6,
                     ease: 'anticipate',
