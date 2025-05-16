@@ -37,6 +37,8 @@ const stories: StoryItem[] = [
 function Stories() {
   const { width } = useWindowSize();
   const [leftAnimationComplete, setLeftAnimationComplete] = useState<boolean[]>([]);
+  const [rightAnimationComplete, setRightAnimationComplete] = useState<boolean[]>([]);
+
   const handleLeftAnimationReset = (index: number) => {
     setLeftAnimationComplete((prev) => {
       const newState = [...prev];
@@ -44,6 +46,15 @@ function Stories() {
       return newState;
     });
   };
+
+  const handleRightAnimationReset = (index: number) => {
+    setRightAnimationComplete((prev) => {
+      const newState = [...prev];
+      newState[index] = false;
+      return newState;
+    });
+  };
+
   const handleLeftAnimationComplete = (index: number) => {
     setTimeout(() => {
       setLeftAnimationComplete((prev) => {
@@ -53,6 +64,17 @@ function Stories() {
       });
     }, 1000);
   };
+
+  const handleRightAnimationComplete = (index: number) => {
+    setTimeout(() => {
+      setRightAnimationComplete((prev) => {
+        const newState = [...prev];
+        newState[index] = true;
+        return newState;
+      });
+    }, 600);
+  };
+
   return (
     <div className="stories-section">
       <ShortCouple />
@@ -81,7 +103,7 @@ function Stories() {
                 className="story-flower-1"
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={
-                  leftAnimationComplete[index] || width <= 767
+                  leftAnimationComplete[index]
                     ? { opacity: 1, scale: 1 }
                     : { opacity: 0, scale: 0.5 }
                 }
@@ -104,7 +126,7 @@ function Stories() {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 0, scale: 0.5 }}
                 whileInView={
-                  leftAnimationComplete[index] || width <= 767
+                  rightAnimationComplete[index]
                     ? { opacity: 0.9, scale: 1 }
                     : { opacity: 0, scale: 0.5 }
                 }
@@ -126,6 +148,11 @@ function Stories() {
                 <motion.div
                   className="story-content__left"
                   initial={
+                    width > 767
+                      ? { x: '-100%', opacity: 0, y: 0, scale: 0.7 }
+                      : { x: 0, opacity: 0, y: 50, scale: 0.7 }
+                  }
+                  animate={
                     width > 767
                       ? { x: '-100%', opacity: 0, y: 0, scale: 0.7 }
                       : { x: 0, opacity: 0, y: 50, scale: 0.7 }
@@ -153,6 +180,11 @@ function Stories() {
                       ? { x: '100%', opacity: 0, y: 0, scale: 0.2 }
                       : { x: 0, opacity: 0, y: 50, scale: 0.7 }
                   }
+                  animate={
+                    width > 767
+                      ? { x: '100%', opacity: 0, y: 0, scale: 0.2 }
+                      : { x: 0, opacity: 0, y: 50, scale: 0.7 }
+                  }
                   whileInView={{ x: 0, opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: false, amount: 'some' }}
                   transition={{
@@ -160,6 +192,8 @@ function Stories() {
                     ease: 'anticipate',
                     opacity: { duration: 1 },
                   }}
+                  onViewportEnter={() => handleRightAnimationComplete(index)}
+                  onViewportLeave={() => handleRightAnimationReset(index)}
                 >
                   <div className="story-content__right-wrapper">
                     <h3 className="story-title">{story.title}</h3>
