@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 140px;
   opacity: 1;
   z-index: 2;
   position: relative;
@@ -67,11 +67,11 @@
     z-index: -1;
   }
   .story-flower-2 {
-    bottom: 46px;
-    left: -333px;
+    bottom: -137px;
+    left: -225px;
     opacity: 0.9;
     position: absolute;
-    transform: rotate(77deg);
+    transform: rotate(37deg);
     width: 400px;
     z-index: -1;
   }
@@ -106,7 +106,7 @@
 
   &:hover {
     .story-content__right {
-      transform: translateX(50px);
+      // transform: translateX(50px) !important;
     }
   }
 
@@ -187,7 +187,7 @@
       bottom: -103px;
       left: -64px;
       position: absolute;
-      transform: rotate(-12deg);
+      // transform: rotate(-12deg) !important;
       width: 250px;
       z-index: -1;
     }
@@ -200,11 +200,11 @@
     width: 100%;
     display: block;
 
-    &:hover {
-      .story-content__right {
-        transform: none;
-      }
-    }
+    // &:hover {
+    //   .story-content__right {
+    //     transform: none !important;
+    //   }
+    // }
 
     &__left {
       min-height: 0;
