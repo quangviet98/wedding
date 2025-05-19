@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image38 from '../assets/Image-38.png';
-import Image41 from '../assets/Image-41.png';
+import Image41 from '../assets/Image-43.png';
 import useWindowSize from '../hooks/useWindowSize';
 import ShortCouple from './ShortCouple';
 import './Stories.scss';
@@ -127,7 +127,7 @@ function Stories() {
                 animate={{ opacity: 0, scale: 0.5 }}
                 whileInView={
                   rightAnimationComplete[index]
-                    ? { opacity: 0.9, scale: 1 }
+                    ? { opacity: 1, scale: 1 }
                     : { opacity: 0, scale: 0.5 }
                 }
                 viewport={{ once: false, margin: '-100px', amount: 'some' }}
@@ -141,7 +141,7 @@ function Stories() {
                     duration: 0.6,
                   },
                 }}
-                style={{ rotate: width > 767 ? 37 : -12 }}
+                style={{ rotate: width > 767 ? -22 : -12 }}
               />
 
               <div className="story-content">
